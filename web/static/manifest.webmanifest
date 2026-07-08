@@ -1,0 +1,8 @@
+{
+  "name": "내일로 역 탐색기",
+  "short_name": "내일로",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#111827"
+}
