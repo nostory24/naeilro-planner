@@ -95,7 +95,9 @@
 
     <div class="panel">
       <label>출발역</label>
-      <select id="station"></select>
+      <input id="stationInput" list="stationList" placeholder="예: 구미, 서울, 부산" autocomplete="off" />
+      <datalist id="stationList"></datalist>
+      <div class="mutedSmall">역 이름 일부만 입력하면 후보가 표시됩니다.</div>
       <div class="grid">
         <div>
           <label>최대 시간(분)</label>
@@ -115,7 +117,9 @@
   </div>
 
 <script>
-const stationEl=document.getElementById("station");
+const stationInput=document.getElementById("stationInput");
+const stationList=document.getElementById("stationList");
+let allStations = [];
 const minutesEl=document.getElementById("minutes");
 const transferEl=document.getElementById("transfer");
 const statusEl=document.getElementById("status");
@@ -136,14 +140,20 @@ async function loadStations(){
     const res=await fetch("/api/stations");
     const data=await res.json();
     if(data.error) throw new Error(data.error);
-    stationEl.innerHTML="";
-    data.stations.forEach(s=>{
-      const o=document.createElement("option");
-      o.value=s; o.textContent=s;
-      if(s==="구미") o.selected=true;
-      stationEl.appendChild(o);
+
+    allStations = data.stations || [];
+    stationList.innerHTML = "";
+
+    allStations.forEach(s=>{
+      const opt=document.createElement("option");
+      opt.value=s;
+      stationList.appendChild(opt);
     });
-    statusEl.textContent=`역 ${data.stations.length}개 로드됨`;
+
+    if(allStations.includes("구미")) stationInput.value = "구미";
+    else if(allStations.length) stationInput.value = allStations[0];
+
+    statusEl.textContent=`역 ${allStations.length}개 로드됨`;
   }catch(e){
     statusEl.innerHTML=`<div class="err">${esc(e.message)}</div>`;
   }
@@ -303,11 +313,26 @@ function render(data){
 async function search(){
   stopTimers();
   randomArea.innerHTML="";
+
+  const fromStation = stationInput.value.trim();
+  if(!fromStation){
+    statusEl.innerHTML=`<div class="err">출발역을 입력하세요.</div>`;
+    return;
+  }
+
+  if(allStations.length && !allStations.includes(fromStation)){
+    const matches = allStations.filter(s => s.includes(fromStation)).slice(0, 5);
+    const hint = matches.length ? ` 혹시 ${matches.join(", ")} 중 하나인가요?` : "";
+    statusEl.innerHTML=`<div class="err">역 목록에 없는 출발역입니다.${esc(hint)}</div>`;
+    return;
+  }
+
   const params=new URLSearchParams({
-    from_station: stationEl.value,
+    from_station: fromStation,
     minutes: minutesEl.value || "180",
     max_transfer: transferEl.value || "2"
   });
+
   statusEl.textContent="검색 중...";
   resultsEl.innerHTML="";
   try{
@@ -320,6 +345,9 @@ async function search(){
   }
 }
 btn.addEventListener("click",search);
+stationInput.addEventListener("keydown", (e) => {
+  if(e.key === "Enter") search();
+});
 if("serviceWorker" in navigator){navigator.serviceWorker.register("/sw.js").catch(()=>{});}
 loadStations();
 </script>
