@@ -51,42 +51,41 @@
     .err{color:#fecaca;background:rgba(239,68,68,.14);border:1px solid rgba(239,68,68,.35);padding:12px;border-radius:12px}
 
     .randomBox{
-      margin:14px 0;
-      padding:16px;
-      border-radius:18px;
+      margin:14px 0;padding:16px;border-radius:18px;
       border:1px solid rgba(250,204,21,.28);
       background:linear-gradient(135deg,rgba(244,114,182,.16),rgba(56,189,248,.10));
-      box-shadow:0 18px 60px rgba(0,0,0,.28);
+      box-shadow:0 18px 60px rgba(0,0,0,.28)
     }
     .randomTitle{font-weight:900;font-size:17px;margin-bottom:8px}
     .rouletteName{
-      text-align:center;
-      font-size:42px;
-      font-weight:1000;
-      letter-spacing:-.05em;
-      padding:24px 8px;
-      color:#fff7ed;
-      text-shadow:0 0 24px rgba(250,204,21,.35);
-      min-height:96px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      transform:translateZ(0);
+      text-align:center;font-size:42px;font-weight:1000;letter-spacing:-.05em;
+      padding:24px 8px;color:#fff7ed;text-shadow:0 0 24px rgba(250,204,21,.35);
+      min-height:96px;display:flex;align-items:center;justify-content:center
     }
-    .countdown{
-      text-align:center;
-      color:var(--yellow);
-      font-size:18px;
-      font-weight:900;
-      margin-top:4px;
-    }
-    .winner{
-      border-color:rgba(34,197,94,.45);
-      background:linear-gradient(135deg,rgba(34,197,94,.18),rgba(56,189,248,.10));
-    }
+    .countdown{text-align:center;color:var(--yellow);font-size:18px;font-weight:900;margin-top:4px}
+    .winner{border-color:rgba(34,197,94,.45);background:linear-gradient(135deg,rgba(34,197,94,.18),rgba(56,189,248,.10))}
     .winner .rouletteName{color:#bbf7d0}
     .confirmRow{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
-    .hide{display:none}
+
+    .selectTools{
+      display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:12px;
+    }
+    .selectTools button{
+      margin-top:0; padding:11px 12px; font-size:14px;
+    }
+    .checkRow{
+      display:grid;
+      grid-template-columns:32px 1fr auto;
+      gap:10px;
+      align-items:center;
+    }
+    .checkRow input[type="checkbox"]{
+      width:22px;height:22px;accent-color:#38bdf8;
+    }
+    .stationBlock{min-width:0}
+    .stationName{font-size:18px;font-weight:900}
+    .selectedHint{color:#fde68a;font-weight:800}
+    .mutedSmall{font-size:12px;color:var(--muted);margin-top:3px}
   </style>
 </head>
 <body>
@@ -125,10 +124,12 @@ const randomArea=document.getElementById("randomArea");
 const btn=document.getElementById("btn");
 
 let currentResults = [];
+let selectedKeys = new Set();
 let rouletteTimer = null;
 let countdownTimer = null;
 
 function esc(v){return String(v??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;");}
+function keyOf(r){return `${r.to_station}|${r.duration_minutes}|${r.transfer_count}|${r.path}`;}
 
 async function loadStations(){
   try{
@@ -148,73 +149,105 @@ async function loadStations(){
   }
 }
 
+function selectedResults(){
+  return currentResults.filter(r => selectedKeys.has(keyOf(r)));
+}
+
+function updateSelectedStatus(){
+  const count = selectedResults().length;
+  const total = currentResults.length;
+  const hint = document.getElementById("selectedHint");
+  if(hint) hint.textContent = `랜덤 후보 ${count}/${total}개 선택됨`;
+
+  const btn = document.getElementById("drawBtn");
+  if(btn) btn.disabled = count < 1;
+}
+
+function toggleOne(key, checked){
+  if(checked) selectedKeys.add(key);
+  else selectedKeys.delete(key);
+  updateSelectedStatus();
+}
+
+function selectAll(){
+  currentResults.forEach(r => selectedKeys.add(keyOf(r)));
+  renderResultsList();
+  renderRandomPrompt();
+}
+
+function deselectAll(){
+  selectedKeys.clear();
+  renderResultsList();
+  renderRandomPrompt();
+}
+
 function renderRandomPrompt(){
-  if(!currentResults.length){
-    randomArea.innerHTML="";
-    return;
-  }
+  if(!currentResults.length){ randomArea.innerHTML=""; return; }
+  const count = selectedResults().length;
+
   randomArea.innerHTML=`
-    <div class="randomBox" id="randomBox">
+    <div class="randomBox">
       <div class="randomTitle">🎲 랜덤으로 여행지를 뽑을까요?</div>
-      <div class="meta">현재 검색 결과 ${currentResults.length}개 중 하나를 뽑습니다.</div>
+      <div class="meta">
+        검색 결과 중 체크된 역만 룰렛 후보에 들어갑니다.
+        <span class="selectedHint" id="selectedHint">랜덤 후보 ${count}/${currentResults.length}개 선택됨</span>
+      </div>
+      <div class="selectTools">
+        <button class="secondary" onclick="selectAll()">전체 선택</button>
+        <button class="secondary" onclick="deselectAll()">전체 해제</button>
+      </div>
       <div class="confirmRow">
-        <button class="rouletteBtn" onclick="startRoulette()">Y · 뽑기</button>
+        <button class="rouletteBtn" id="drawBtn" onclick="startRoulette()" ${count < 1 ? "disabled" : ""}>Y · 뽑기</button>
         <button class="secondary" onclick="cancelRoulette()">N · 안 뽑기</button>
       </div>
     </div>
   `;
 }
 
-function cancelRoulette(){
-  stopTimers();
-  randomArea.innerHTML="";
-}
-
+function cancelRoulette(){ stopTimers(); randomArea.innerHTML=""; }
 function stopTimers(){
   if(rouletteTimer){ clearInterval(rouletteTimer); rouletteTimer=null; }
   if(countdownTimer){ clearInterval(countdownTimer); countdownTimer=null; }
 }
-
-function randomItem(){
-  return currentResults[Math.floor(Math.random() * currentResults.length)];
+function randomItem(candidates){
+  return candidates[Math.floor(Math.random() * candidates.length)];
 }
 
 function startRoulette(){
-  if(!currentResults.length) return;
-  stopTimers();
+  const candidates = selectedResults();
+  if(!candidates.length){
+    alert("랜덤 후보를 최소 1개 이상 체크하세요.");
+    return;
+  }
 
+  stopTimers();
   randomArea.innerHTML=`
-    <div class="randomBox" id="randomBox">
+    <div class="randomBox">
       <div class="randomTitle">🎲 여행지 추첨중...</div>
       <div class="rouletteName" id="rouletteName">준비</div>
       <div class="countdown" id="countdown">5</div>
     </div>
   `;
 
-  const nameEl = document.getElementById("rouletteName");
-  const countEl = document.getElementById("countdown");
+  const nameEl=document.getElementById("rouletteName");
+  const countEl=document.getElementById("countdown");
+  let remaining=5;
 
-  let remaining = 5;
-  let speed = 70;
+  rouletteTimer=setInterval(()=>{
+    const item=randomItem(candidates);
+    nameEl.textContent=item.to_station;
+  },70);
 
-  rouletteTimer = setInterval(() => {
-    const item = randomItem();
-    nameEl.textContent = item.to_station;
-  }, speed);
-
-  countdownTimer = setInterval(() => {
-    remaining -= 1;
-    countEl.textContent = remaining;
-    if (remaining <= 0) {
-      finishRoulette();
-    }
-  }, 1000);
+  countdownTimer=setInterval(()=>{
+    remaining-=1;
+    countEl.textContent=remaining;
+    if(remaining<=0) finishRoulette(candidates);
+  },1000);
 }
 
-function finishRoulette(){
+function finishRoulette(candidates){
   stopTimers();
-  const winner = randomItem();
-
+  const winner=randomItem(candidates);
   randomArea.innerHTML=`
     <div class="randomBox winner">
       <div class="randomTitle">🎉 오늘의 여행지는</div>
@@ -233,28 +266,38 @@ function finishRoulette(){
   `;
 }
 
-function render(data){
-  currentResults = data.results || [];
-  statusEl.textContent=`${data.from_station}에서 ${data.minutes}분 이내: ${data.count}개 역`;
-
-  renderRandomPrompt();
-
+function renderResultsList(){
   if(!currentResults.length){
     resultsEl.innerHTML=`<div class="card">조건에 맞는 역이 없습니다.</div>`;
     return;
   }
 
-  resultsEl.innerHTML=currentResults.map(r=>`
-    <div class="card">
-      <div class="top">
-        <div class="station">${esc(r.to_station)}</div>
-        <div class="mins">${esc(r.duration_minutes)}분</div>
+  resultsEl.innerHTML=currentResults.map((r, idx)=>{
+    const key = keyOf(r);
+    const checked = selectedKeys.has(key) ? "checked" : "";
+    return `
+      <div class="card">
+        <div class="checkRow">
+          <input type="checkbox" ${checked} onchange="toggleOne('${esc(key)}', this.checked)" />
+          <div class="stationBlock">
+            <div class="stationName">${esc(r.to_station)}</div>
+            <div class="meta">환승 ${esc(r.transfer_count)}회 · 탑승 ${esc(r.ride_count)}회</div>
+          </div>
+          <div class="mins">${esc(r.duration_minutes)}분</div>
+        </div>
+        <div class="path">${esc(r.path)}</div>
+        ${r.legs ? `<details><summary>상세 경로</summary><div class="legs">${esc(r.legs)}</div></details>` : ""}
       </div>
-      <div class="meta">환승 ${esc(r.transfer_count)}회 · 탑승 ${esc(r.ride_count)}회</div>
-      <div class="path">${esc(r.path)}</div>
-      ${r.legs ? `<details><summary>상세 경로</summary><div class="legs">${esc(r.legs)}</div></details>` : ""}
-    </div>
-  `).join("");
+    `;
+  }).join("");
+}
+
+function render(data){
+  currentResults=data.results||[];
+  selectedKeys = new Set(currentResults.map(keyOf));
+  statusEl.textContent=`${data.from_station}에서 ${data.minutes}분 이내: ${data.count}개 역`;
+  renderRandomPrompt();
+  renderResultsList();
 }
 
 async function search(){
