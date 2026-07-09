@@ -1,4 +1,4 @@
-const CACHE_NAME="naeilro-v5";
+const CACHE_NAME="naeilro-v6-3";
 self.addEventListener("install",event=>{
   event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(["/","/manifest.webmanifest"])));
 });
