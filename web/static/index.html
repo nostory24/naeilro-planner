@@ -42,10 +42,49 @@
 <script>
 const stationInput=document.getElementById("stationInput"),suggestBox=document.getElementById("suggestBox"),minutesEl=document.getElementById("minutes"),transferEl=document.getElementById("transfer"),statusEl=document.getElementById("status"),resultsEl=document.getElementById("results"),randomArea=document.getElementById("randomArea"),btn=document.getElementById("btn");
 let allStations=[],currentResults=[],selectedKeys=new Set(),excludedRegions=new Set(),rouletteTimer=null,countdownTimer=null;
-const REGION_MAP={"서울":["서울","용산","영등포","청량리","왕십리","옥수","상봉","수서"],"경기":["수원","평택","안양","광명","행신","부천","의정부","덕소","양평","용문","가평","청평","퇴계원","사릉","금곡","마석","천마산","평내호평","오산","서정리","지제","이천","부발","여주","곤지암"],"인천":["인천","검암","계양","영종","운서","인천공항"],"강원":["춘천","남춘천","강촌","백양리","김유정","강릉","정동진","묵호","동해","삼척","태백","철암","도계","원주","만종","횡성","둔내","평창","진부"],"충북":["오송","청주","청주공항","충주","제천","단양","영동","옥천","음성","증평","봉양","대소","감곡장호원"],"충남":["천안","천안아산","아산","온양온천","신창","예산","홍성","광천","대천","웅천","장항","서천","논산","강경","계룡","공주","서대전"],"대전":["대전","서대전","신탄진","흑석리"],"세종":["조치원","부강"],"전북":["전주","익산","군산","김제","정읍","남원","임실","오수","삼례","대야"],"전남":["목포","나주","무안","함평","영광","장성","순천","여수엑스포","여천","벌교","보성","득량","화순","구례구","곡성"],"광주":["광주송정","광주","효천","극락강"],"경북":["김천","김천구미","구미","왜관","경산","영천","하양","포항","서경주","경주","안동","영주","풍기","예천","점촌","상주","문경","의성","청도"],"경남":["창원","창원중앙","마산","진주","진영","밀양","삼랑진","원동","물금","양산","북천","하동","함안","중리"],"대구":["동대구","대구","서대구","신암","화본"],"울산":["울산","태화강","남창","덕하","호계"],"부산":["부산","구포","사상","부전","신해운대","센텀","기장","좌천","월내"]};
+const REGION_MAP={
+"서울":["서울","용산","영등포","청량리","왕십리","옥수","상봉","수서"],
+"경기":["수원","평택","안양","광명","행신","부천","의정부","덕소","양평","용문","가평","청평","퇴계원","사릉","금곡","마석","천마산","평내호평","오산","서정리","지제","이천","부발","여주","곤지암","양동","지평","신원","국수","아신","오빈","팔당","도심","양수","운길산","동두천","소요산","초성리","전곡","연천"],
+"인천":["인천","검암","계양","영종","운서","청라국제도시","인천공항"],
+"강원":["춘천","남춘천","강촌","백양리","김유정","강릉","정동진","묵호","동해","삼척","태백","철암","도계","원주","서원주","만종","횡성","둔내","평창","진부","추암","망상","옥계","동백산","신기","고한","사북","민둥산","영월","쌍룡","예미"],
+"충북":["오송","청주","청주공항","충주","제천","단양","영동","옥천","음성","증평","봉양","대소","감곡장호원","주덕","삼탄","목행","앙성온천","도안","괴산","연풍"],
+"충남":["천안","천안아산","아산","온양온천","신창","예산","홍성","광천","대천","웅천","장항","서천","논산","강경","계룡","공주","삽교","신례원","도고온천","청소","주포","판교","연산"],
+"대전":["대전","서대전","신탄진","흑석리","회덕","가수원"],
+"세종":["조치원","부강","소정리","전의"],
+"전북":["전주","익산","군산","김제","정읍","남원","임실","오수","삼례","대야","신태인","백양사","함열","황등","서전주","동산","관촌","운암","산성"],
+"전남":["목포","나주","무안","함평","영광","장성","순천","여수엑스포","여천","벌교","보성","득량","화순","구례구","곡성","몽탄","일로","다시","능주","명봉","이양","개태사","압록","석곡","구성","옥곡","광양","진상","하동"],
+"광주":["광주송정","광주","효천","극락강","서광주","송정리"],
+"경북":["김천","김천구미","구미","왜관","경산","영천","하양","포항","서경주","경주","안동","영주","풍기","예천","점촌","상주","문경","의성","청도","상동","남성현","신경주","아화","신녕","화산","북영천","탑리","군위","우보","화본","봉화","춘양","분천","양원","승부","석포","현동","임기","영덕","강구","장사","월포","청하","안강"],
+"경남":["창원","창원중앙","마산","진주","진영","밀양","삼랑진","원동","물금","양산","북천","하동","함안","중리","반성","완사","군북","한림정","진례"],
+"대구":["동대구","대구","서대구","신암"],
+"울산":["울산","태화강","남창","덕하","호계","북울산","서생"],
+"부산":["부산","구포","사상","부전","신해운대","센텀","기장","좌천","월내","송정","일광","재송","동래","화명"]
+};
+const REGION_HINTS=[
+["서울",["서울"]],
+["부산",["부산","해운대","센텀","기장","구포","사상","부전","동래","화명"]],
+["대구",["대구"]],
+["대전",["대전"]],
+["광주",["광주"]],
+["울산",["울산","태화강"]],
+["인천",["인천","검암","계양","영종","운서"]],
+["세종",["조치원","부강","전의","소정리"]],
+["경기",["수원","평택","안양","광명","행신","양평","용문","가평","청평","이천","부발","여주","곤지암","덕소","팔당","양수","연천","전곡","의정부"]],
+["강원",["강릉","춘천","원주","동해","삼척","태백","정동진","묵호","횡성","평창","진부","도계","철암","만종","고한","사북","영월"]],
+["충북",["오송","청주","충주","제천","단양","영동","옥천","음성","증평","봉양","대소","감곡"]],
+["충남",["천안","아산","온양","예산","홍성","광천","대천","웅천","장항","서천","논산","강경","계룡","공주"]],
+["전북",["전주","익산","군산","김제","정읍","남원","임실","오수","삼례","대야"]],
+["전남",["목포","나주","무안","함평","영광","장성","순천","여수","여천","벌교","보성","득량","화순","구례","곡성","광양"]],
+["경북",["김천","구미","왜관","경산","영천","하양","포항","경주","안동","영주","풍기","예천","점촌","상주","문경","의성","청도","봉화","영덕"]],
+["경남",["창원","마산","진주","진영","밀양","삼랑진","원동","물금","양산","북천","하동","함안","중리","반성"]]
+];
 const REGION_ORDER=["서울","경기","인천","강원","충북","충남","대전","세종","전북","전남","광주","경북","경남","대구","울산","부산","미분류"];
 function esc(v){return String(v??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;");}
-function keyOf(r){return `${r.to_station}|${r.duration_minutes}|${r.transfer_count}|${r.path}`;} function regionOf(s){for(const [r,n] of Object.entries(REGION_MAP)){if(n.includes(s))return r;}return "미분류";} function isExcluded(r){return excludedRegions.has(regionOf(r.to_station));}
+function keyOf(r){return `${r.to_station}|${r.duration_minutes}|${r.transfer_count}|${r.path}`;} function regionOf(s){
+  for(const [r,n] of Object.entries(REGION_MAP)){if(n.includes(s))return r;}
+  for(const [r,keywords] of REGION_HINTS){if(keywords.some(k=>s.includes(k)))return r;}
+  return "미분류";
+} function isExcluded(r){return excludedRegions.has(regionOf(r.to_station));}
 async function loadStations(){try{const res=await fetch("/api/stations");const data=await res.json();if(data.error)throw new Error(data.error);allStations=data.stations||[];stationInput.value="";statusEl.textContent=`역 ${allStations.length}개 로드됨`;}catch(e){statusEl.innerHTML=`<div class="err">${esc(e.message)}</div>`;}}
 function showSuggestions(){const q=stationInput.value.trim();if(!q){suggestBox.style.display="none";suggestBox.innerHTML="";return;}const m=allStations.filter(s=>s.includes(q)).slice(0,80);suggestBox.innerHTML=m.length?m.map(s=>`<div class="suggestItem" onclick="pickStation('${esc(s)}')">${esc(s)}</div>`).join(""):`<div class="suggestItem">후보 없음</div>`;suggestBox.style.display="block";} function pickStation(s){stationInput.value=s;suggestBox.style.display="none";}
 document.addEventListener("click",e=>{if(!e.target.closest(".inputWrap"))suggestBox.style.display="none";});stationInput.addEventListener("input",showSuggestions);stationInput.addEventListener("focus",showSuggestions);
@@ -53,10 +92,21 @@ function selectedResults(){return currentResults.filter(r=>selectedKeys.has(keyO
 function syncExcludedSelection(){currentResults.forEach(r=>{if(isExcluded(r))selectedKeys.delete(keyOf(r));});}
 function updateSelectedStatus(){syncExcludedSelection();const c=selectedResults().length,t=currentResults.length,h=document.getElementById("selectedHint");const ex=[...excludedRegions].join(", ");if(h)h.textContent=`랜덤 후보 ${c}/${t}개 선택됨${ex?` · 제외: ${ex}`:""}`;const d=document.getElementById("drawBtn");if(d)d.disabled=c<1;}
 function toggleOne(k,c){if(c)selectedKeys.add(k);else selectedKeys.delete(k);updateSelectedStatus();}
-function toggleRegion(r,c){if(c)excludedRegions.add(r);else excludedRegions.delete(r);syncExcludedSelection();renderResultsList();renderRandomPrompt();}
+function toggleRegion(r,c){
+  if(c){
+    excludedRegions.add(r);
+    syncExcludedSelection();
+  }else{
+    excludedRegions.delete(r);
+    currentResults.forEach(item=>{if(regionOf(item.to_station)===r)selectedKeys.add(keyOf(item));});
+    syncExcludedSelection();
+  }
+  renderResultsList();
+  renderRandomPrompt();
+}
 function selectAll(){currentResults.forEach(r=>{if(!isExcluded(r))selectedKeys.add(keyOf(r));});renderResultsList();renderRandomPrompt();}
 function deselectAll(){selectedKeys.clear();renderResultsList();renderRandomPrompt();}
-function renderRegionExclude(){return `<div class="regionExclude"><div class="regionTitle">랜덤 제외 지역</div><div class="regionGrid">${REGION_ORDER.map(r=>`<label class="regionChip"><input type="checkbox" ${excludedRegions.has(r)?"checked":""} onchange="toggleRegion('${r}',this.checked)" />${r}</label>`).join("")}</div><div class="mutedSmall">예: 서울을 체크하면 서울 지역 역은 리스트에는 보이지만 랜덤 후보에서 제외됩니다.</div></div>`;}
+function renderRegionExclude(){return `<div class="regionExclude"><div class="regionTitle">랜덤 제외 지역</div><div class="regionGrid">${REGION_ORDER.map(r=>`<label class="regionChip"><input type="checkbox" ${excludedRegions.has(r)?"checked":""} onchange="toggleRegion('${r}',this.checked)" />${r}</label>`).join("")}</div><div class="mutedSmall">예: 서울을 체크하면 서울 지역 역은 랜덤 후보에서 제외되고, 다시 체크 해제하면 후보로 돌아옵니다.</div></div>`;}
 function renderRandomPrompt(){if(!currentResults.length){randomArea.innerHTML="";return;}syncExcludedSelection();const c=selectedResults().length;randomArea.innerHTML=`<div class="randomBox"><div class="randomTitle">🎲 랜덤으로 여행지를 뽑을까요?</div><div class="meta">체크된 역 중, 제외 지역이 아닌 역만 룰렛 후보에 들어갑니다. <span class="selectedHint" id="selectedHint">랜덤 후보 ${c}/${currentResults.length}개 선택됨</span></div>${renderRegionExclude()}<div class="selectTools"><button class="secondary" onclick="selectAll()">전체 선택</button><button class="secondary" onclick="deselectAll()">전체 해제</button></div><div class="confirmRow"><button class="rouletteBtn" id="drawBtn" onclick="startRoulette()" ${c<1?"disabled":""}>Y · 뽑기</button><button class="secondary" onclick="cancelRoulette()">N · 안 뽑기</button></div></div>`;updateSelectedStatus();}
 function cancelRoulette(){stopTimers();randomArea.innerHTML="";}function stopTimers(){if(rouletteTimer){clearInterval(rouletteTimer);rouletteTimer=null;}if(countdownTimer){clearInterval(countdownTimer);countdownTimer=null;}} function randomItem(a){return a[Math.floor(Math.random()*a.length)];}
 function startRoulette(){const c=selectedResults();if(!c.length){alert("랜덤 후보를 최소 1개 이상 체크하세요.");return;}stopTimers();randomArea.innerHTML=`<div class="randomBox"><div class="randomTitle">🎲 여행지 추첨중...</div><div class="rouletteName" id="rouletteName">준비</div><div class="countdown" id="countdown">5</div></div>`;const n=document.getElementById("rouletteName"),co=document.getElementById("countdown");let r=5;rouletteTimer=setInterval(()=>{n.textContent=randomItem(c).to_station;},70);countdownTimer=setInterval(()=>{r-=1;co.textContent=r;if(r<=0)finishRoulette(c);},1000);}
