@@ -17,12 +17,20 @@ STATIC = ROOT / "static"
 app = FastAPI(title="내일로 역 탐색기", version="7.4.0")
 app.mount("/static", StaticFiles(directory=STATIC), name="static")
 
+_STATION_CACHE: list[str] | None = None
+
 
 def db() -> sqlite3.Connection:
     if not DB_PATH.exists():
         raise FileNotFoundError("web/output/reachable.db 파일이 없습니다.")
-    conn = sqlite3.connect(DB_PATH)
+
+    # Render에서는 배포된 DB를 읽기 전용으로 사용합니다.
+    # immutable=1은 불필요한 파일 잠금과 WAL 확인을 피해서 조회 지연을 줄입니다.
+    uri = f"file:{DB_PATH.as_posix()}?mode=ro&immutable=1"
+    conn = sqlite3.connect(uri, uri=True, timeout=3)
     conn.row_factory = sqlite3.Row
+    conn.execute("PRAGMA query_only=ON")
+    conn.execute("PRAGMA busy_timeout=3000")
     return conn
 
 
@@ -180,22 +188,77 @@ def sw():
 
 @app.get("/api/health")
 def health():
-    return {"ok": DB_PATH.exists(), "db": str(DB_PATH)}
+    return {
+        "ok": DB_PATH.exists(),
+        "db": str(DB_PATH),
+        "db_size_bytes": DB_PATH.stat().st_size if DB_PATH.exists() else 0,
+    }
+
+
+@app.get("/api/db-check")
+def db_check():
+    try:
+        conn = db()
+        station_count = conn.execute(
+            "SELECT COUNT(*) FROM stations"
+        ).fetchone()[0]
+        direct_count = conn.execute(
+            "SELECT COUNT(*) FROM direct_routes"
+        ).fetchone()[0]
+        conn.close()
+
+        return {
+            "ok": True,
+            "station_count": station_count,
+            "direct_route_count": direct_count,
+        }
+    except Exception as exc:
+        return JSONResponse(
+            status_code=500,
+            content={"ok": False, "error": str(exc)},
+        )
 
 
 @app.get("/api/stations")
 def stations():
+    global _STATION_CACHE
+
     try:
+        if _STATION_CACHE is not None:
+            return {
+                "stations": _STATION_CACHE,
+                "count": len(_STATION_CACHE),
+                "cached": True,
+            }
+
         conn = db()
         rows = conn.execute("""
-            SELECT DISTINCT station_name AS station
+            SELECT station_name
             FROM stations
+            WHERE station_name IS NOT NULL
+              AND TRIM(station_name) <> ''
             ORDER BY station_name
         """).fetchall()
         conn.close()
-        return {"stations": [row["station"] for row in rows]}
+
+        # 혹시 동일 역명이 여러 역코드로 들어 있어도 한 번만 반환
+        _STATION_CACHE = sorted({
+            str(row["station_name"]).strip()
+            for row in rows
+            if str(row["station_name"]).strip()
+        })
+
+        return {
+            "stations": _STATION_CACHE,
+            "count": len(_STATION_CACHE),
+            "cached": False,
+        }
+
     except Exception as exc:
-        return JSONResponse(status_code=500, content={"error": str(exc)})
+        return JSONResponse(
+            status_code=500,
+            content={"error": f"역 목록 조회 실패: {exc}"},
+        )
 
 
 @app.get("/api/search")

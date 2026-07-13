@@ -1,42 +1,35 @@
-# 내일로 역 탐색기 v7.5
+# 내일로 역 탐색기 v7.6
 
-## 수정사항
+## 역 목록 로딩 수정
 
-- 검색 시 발생하던 `trainExcluded is not defined` 오류 수정
-- 삭제된 `trainExcluded()` 호출을 전부 제거
-- 열차 필터는 서버의 `excluded_train_types` 방식으로만 처리
-- 지역 제외 필터와 열차 제외 필터가 서로 독립적으로 동작
-- 모바일 브라우저 캐시 버전 `naeilro-v7-5` 적용
-- Render용 `web/requirements.txt` 유지
+- SQLite를 Render에서 읽기 전용 `immutable` 모드로 열도록 변경
+- 역 목록을 첫 조회 후 서버 메모리에 캐시
+- 중복 역명 제거
+- DB 잠금 대기시간을 3초로 제한
+- 프런트엔드 역 목록 요청을 8초로 제한
+- `/api/db-check` 진단 주소 추가
+- 모바일 캐시 버전 `naeilro-v7-6`
 
-## 열차 필터 동작
+## 배포 후 확인 주소
 
-체크한 차종의 운행편만 제거한 뒤 남은 열차로 최단경로를 다시 계산합니다.
+```text
+https://naeilro-planner.onrender.com/api/health
+https://naeilro-planner.onrender.com/api/db-check
+https://naeilro-planner.onrender.com/api/stations
+```
 
-- KTX·KTX-산천
-- ITX-새마을
-- ITX-마음
-- ITX-청춘
-- 새마을호
-- 무궁화호
-- 누리로
-- 차종 미확인
+정상이라면 `/api/db-check`에 `station_count`와
+`direct_route_count`가 숫자로 표시됩니다.
 
-## 배포
-
-v7.4용 새 DB를 이미 만들었다면 그대로 사용해도 됩니다.
+## 업로드
 
 ```bash
-cp -r /c/Users/user/Desktop/naeilro_v7_5_train_filter_bugfix/* /c/Users/user/Desktop/naeilro_v6_korail_runinfo_sqlite_pwa/
+cp -r /c/Users/user/Desktop/naeilro_v7_6_station_loading_fix/* /c/Users/user/Desktop/naeilro_v6_korail_runinfo_sqlite_pwa/
 
 cd /c/Users/user/Desktop/naeilro_v6_korail_runinfo_sqlite_pwa
 git add .
-git commit -m "Fix v7.5 train filter"
+git commit -m "Fix station loading v7.6"
 git push
 ```
 
-Render에서 자동 배포가 시작되지 않으면:
-
-```text
-Manual Deploy → Deploy latest commit
-```
+DB를 다시 만들 필요는 없습니다.

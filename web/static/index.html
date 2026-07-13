@@ -85,7 +85,30 @@ function keyOf(r){return `${r.to_station}|${r.duration_minutes}|${r.transfer_cou
   for(const [r,keywords] of REGION_HINTS){if(keywords.some(k=>s.includes(k)))return r;}
   return "미분류";
 } function isExcluded(r){return excludedRegions.has(regionOf(r.to_station));}
-async function loadStations(){try{const res=await fetch("/api/stations");const data=await res.json();if(data.error)throw new Error(data.error);allStations=data.stations||[];stationInput.value="";statusEl.textContent=`역 ${allStations.length}개 로드됨`;}catch(e){statusEl.innerHTML=`<div class="err">${esc(e.message)}</div>`;}}
+async function loadStations(){
+  const controller=new AbortController();
+  const timer=setTimeout(()=>controller.abort(),8000);
+
+  try{
+    const res=await fetch("/api/stations",{signal:controller.signal,cache:"no-store"});
+    const data=await res.json();
+
+    if(!res.ok || data.error){
+      throw new Error(data.error || `HTTP ${res.status}`);
+    }
+
+    allStations=data.stations || [];
+    stationInput.value="";
+    statusEl.textContent=`역 ${allStations.length}개 로드됨`;
+  }catch(e){
+    const message=e.name==="AbortError"
+      ? "역 목록 요청이 8초를 넘겼습니다. /api/db-check를 확인하세요."
+      : e.message;
+    statusEl.innerHTML=`<div class="err">${esc(message)}</div>`;
+  }finally{
+    clearTimeout(timer);
+  }
+}
 function showSuggestions(){const q=stationInput.value.trim();if(!q){suggestBox.style.display="none";suggestBox.innerHTML="";return;}const m=allStations.filter(s=>s.includes(q)).slice(0,80);suggestBox.innerHTML=m.length?m.map(s=>`<div class="suggestItem" onclick="pickStation('${esc(s)}')">${esc(s)}</div>`).join(""):`<div class="suggestItem">후보 없음</div>`;suggestBox.style.display="block";} function pickStation(s){stationInput.value=s;suggestBox.style.display="none";}
 document.addEventListener("click",e=>{if(!e.target.closest(".inputWrap"))suggestBox.style.display="none";});stationInput.addEventListener("input",showSuggestions);stationInput.addEventListener("focus",showSuggestions);
 function selectedResults(){return currentResults.filter(r=>selectedKeys.has(keyOf(r))&&!isExcluded(r));}
