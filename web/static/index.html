@@ -91,8 +91,9 @@ document.addEventListener("click",e=>{if(!e.target.closest(".inputWrap"))suggest
 function selectedResults(){return currentResults.filter(r=>selectedKeys.has(keyOf(r))&&!isExcluded(r));}
 function syncExcludedSelection(){
   currentResults.forEach(r=>{
-    if(isExcluded(r) || trainExcluded(r)) selectedKeys.delete(keyOf(r));
+    if(isExcluded(r)) selectedKeys.delete(keyOf(r));
   });
+});
 }
 function updateSelectedStatus(){syncExcludedSelection();const c=selectedResults().length,t=currentResults.length,h=document.getElementById("selectedHint");const ex=[...excludedRegions].join(", ");if(h)h.textContent=`랜덤 후보 ${c}/${t}개 선택됨${ex?` · 제외: ${ex}`:""}`;const d=document.getElementById("drawBtn");if(d)d.disabled=c<1;}
 function toggleOne(k,c){if(c)selectedKeys.add(k);else selectedKeys.delete(k);updateSelectedStatus();}

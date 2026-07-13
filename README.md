@@ -1,10 +1,19 @@
-# 내일로 역 탐색기 v7.4
+# 내일로 역 탐색기 v7.5
 
-## 열차 종류별 제외 옵션
+## 수정사항
 
-아래 열차를 각각 선택해서 제외할 수 있습니다.
+- 검색 시 발생하던 `trainExcluded is not defined` 오류 수정
+- 삭제된 `trainExcluded()` 호출을 전부 제거
+- 열차 필터는 서버의 `excluded_train_types` 방식으로만 처리
+- 지역 제외 필터와 열차 제외 필터가 서로 독립적으로 동작
+- 모바일 브라우저 캐시 버전 `naeilro-v7-5` 적용
+- Render용 `web/requirements.txt` 유지
 
-- KTX 및 KTX-산천
+## 열차 필터 동작
+
+체크한 차종의 운행편만 제거한 뒤 남은 열차로 최단경로를 다시 계산합니다.
+
+- KTX·KTX-산천
 - ITX-새마을
 - ITX-마음
 - ITX-청춘
@@ -13,35 +22,21 @@
 - 누리로
 - 차종 미확인
 
-예를 들어 `KTX`만 체크하면 KTX 운행편만 제거하고,
-ITX·무궁화·누리로 등 남은 운행편으로 최단경로를 다시 계산합니다.
+## 배포
 
-여러 열차 종류를 동시에 제외할 수도 있습니다.
-
-## 중요
-
-v7.3의 DB는 역쌍별 열차 종류를 보존하므로 그대로 사용할 수 있습니다.
-아직 v7.3 DB를 만들지 않았다면 다음 명령으로 새로 생성해야 합니다.
+v7.4용 새 DB를 이미 만들었다면 그대로 사용해도 됩니다.
 
 ```bash
-cd builder
-python build_db.py
-cp output/reachable.db ../web/output/reachable.db
-```
+cp -r /c/Users/user/Desktop/naeilro_v7_5_train_filter_bugfix/* /c/Users/user/Desktop/naeilro_v6_korail_runinfo_sqlite_pwa/
 
-GitHub 업로드:
-
-```bash
-cd ..
+cd /c/Users/user/Desktop/naeilro_v6_korail_runinfo_sqlite_pwa
 git add .
-git commit -m "Upgrade to v7.4 train filters"
+git commit -m "Fix v7.5 train filter"
 git push
 ```
 
-Render 설정:
+Render에서 자동 배포가 시작되지 않으면:
 
 ```text
-Root Directory: web
-Build Command: pip install -r requirements.txt
-Start Command: uvicorn app:app --host 0.0.0.0 --port $PORT
+Manual Deploy → Deploy latest commit
 ```
