@@ -249,10 +249,10 @@ def init_db(conn: sqlite3.Connection) -> None:
         to_station TEXT NOT NULL,
         min_duration_minutes INTEGER NOT NULL,
         best_train_no TEXT,
-        best_train_type TEXT,
+        best_train_type TEXT NOT NULL,
         best_line_name TEXT,
         sample_count INTEGER,
-        PRIMARY KEY(from_station_id, to_station_id)
+        PRIMARY KEY(from_station_id, to_station_id, best_train_type)
     );
 
     CREATE TABLE reachable_routes (
@@ -271,10 +271,13 @@ def init_db(conn: sqlite3.Connection) -> None:
         PRIMARY KEY(from_station_id, to_station_id)
     );
 
+    CREATE TABLE reachable_routes_no_ktx AS SELECT * FROM reachable_routes WHERE 0;
+
     CREATE INDEX idx_raw_train ON raw_train_stops(run_ymd, trn_no, uppln_dn_se_cd, trn_run_sn);
     CREATE INDEX idx_train_types_no ON train_types(normalized_train_no);
     CREATE INDEX idx_direct_from ON direct_routes(from_station_id);
     CREATE INDEX idx_reachable_search ON reachable_routes(from_station, duration_minutes, transfer_count);
+    CREATE INDEX idx_reachable_no_ktx_search ON reachable_routes_no_ktx(from_station, duration_minutes, transfer_count);
     """)
     conn.commit()
 
@@ -608,8 +611,10 @@ def build_direct_routes(
     groups: Dict[Tuple[str, str, str], List[Dict[str, Any]]],
     train_type_map: Dict[str, str],
 ) -> None:
-    best: Dict[Tuple[str, str], Dict[str, Any]] = {}
-    sample_count: Dict[Tuple[str, str], int] = defaultdict(int)
+    # 역쌍별 하나만 남기지 않고, 역쌍 + 열차종류별 최단 운행을 보존합니다.
+    # 따라서 서울→부산에 KTX/ITX/무궁화가 모두 있으면 세 종류가 모두 남습니다.
+    best: Dict[Tuple[str, str, str], Dict[str, Any]] = {}
+    sample_count: Dict[Tuple[str, str, str], int] = defaultdict(int)
 
     for (_, train_no, _), stops in tqdm(groups.items(), desc="직통 구간 생성"):
         valid = [s for s in stops if departure_time(s) or arrival_time(s)]
@@ -632,10 +637,10 @@ def build_direct_routes(
                 if duration is None:
                     continue
 
-                key = (dep_stop["stn_cd"], arr_stop["stn_cd"])
+                key = (dep_stop["stn_cd"], arr_stop["stn_cd"], train_type)
                 sample_count[key] += 1
-
                 current = best.get(key)
+
                 if current is None or duration < current["minutes"]:
                     best[key] = {
                         "from_id": dep_stop["stn_cd"],
@@ -650,14 +655,10 @@ def build_direct_routes(
 
     rows = [
         (
-            item["from_id"],
-            item["from_name"],
-            item["to_id"],
-            item["to_name"],
-            item["minutes"],
-            item["train_no"],
-            item["train_type"],
-            item["line_name"],
+            item["from_id"], item["from_name"],
+            item["to_id"], item["to_name"],
+            item["minutes"], item["train_no"],
+            item["train_type"], item["line_name"],
             sample_count[key],
         )
         for key, item in best.items()
@@ -670,21 +671,26 @@ def build_direct_routes(
         VALUES (?,?,?,?,?,?,?,?,?)
     """, rows)
     conn.commit()
-    print(f"직통 구간: {len(rows):,}개")
+    print(f"직통 구간(열차종류별 보존): {len(rows):,}개")
 
 
-def load_graph(conn: sqlite3.Connection):
+
+def load_graph(conn: sqlite3.Connection, exclude_ktx: bool = False):
     names = {
         station_id: station_name
         for station_id, station_name in conn.execute("SELECT station_id,station_name FROM stations")
     }
     edges: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
 
-    for row in conn.execute("""
+    query = """
         SELECT from_station_id,to_station_id,min_duration_minutes,
                best_train_no,best_train_type,best_line_name
         FROM direct_routes
-    """):
+    """
+    params = ()
+    if exclude_ktx:
+        query += " WHERE UPPER(best_train_type) NOT LIKE '%KTX%'"
+    for row in conn.execute(query, params):
         dep, arr, minutes, train_no, train_type, line_name = row
         edges[dep].append(
             {
@@ -772,11 +778,23 @@ def reconstruct(
     return path, " | ".join(leg_texts), used_types, has_unknown
 
 
-def build_reachable_routes(conn: sqlite3.Connection, transfer_wait: int) -> None:
-    names, edges = load_graph(conn)
-    batch = []
+def build_reachable_routes(
+    conn: sqlite3.Connection,
+    transfer_wait: int,
+    table_name: str = "reachable_routes",
+    exclude_ktx: bool = False,
+) -> None:
+    if table_name not in {"reachable_routes", "reachable_routes_no_ktx"}:
+        raise ValueError("허용되지 않은 테이블명입니다.")
 
-    for source in tqdm(names, desc="환승 포함 최단경로"):
+    conn.execute(f"DELETE FROM {table_name}")
+    conn.commit()
+
+    names, edges = load_graph(conn, exclude_ktx=exclude_ktx)
+    batch = []
+    desc = "KTX 제외 최단경로" if exclude_ktx else "전체 열차 최단경로"
+
+    for source in tqdm(names, desc=desc):
         distance, hops, previous = dijkstra(source, edges, transfer_wait)
 
         for target, duration in distance.items():
@@ -785,28 +803,19 @@ def build_reachable_routes(conn: sqlite3.Connection, transfer_wait: int) -> None
 
             path, legs, used_types, has_unknown = reconstruct(source, target, previous, names)
             ride_count = hops.get(target, 0)
-            uses_ktx = int(any("KTX" in train_type.upper() for train_type in used_types))
+            uses_ktx = int(any("KTX" in t.upper() for t in used_types))
 
-            batch.append(
-                (
-                    source,
-                    names.get(source, source),
-                    target,
-                    names.get(target, target),
-                    int(duration),
-                    max(0, ride_count - 1),
-                    ride_count,
-                    path,
-                    legs,
-                    ",".join(used_types),
-                    uses_ktx,
-                    int(has_unknown),
-                )
-            )
+            batch.append((
+                source, names.get(source, source),
+                target, names.get(target, target),
+                int(duration), max(0, ride_count - 1), ride_count,
+                path, legs, ",".join(used_types),
+                uses_ktx, int(has_unknown),
+            ))
 
         if len(batch) >= 5000:
-            conn.executemany("""
-                INSERT OR REPLACE INTO reachable_routes
+            conn.executemany(f"""
+                INSERT OR REPLACE INTO {table_name}
                 (from_station_id,from_station,to_station_id,to_station,duration_minutes,
                  transfer_count,ride_count,path,legs,used_train_types,uses_ktx,has_unknown_train_type)
                 VALUES (?,?,?,?,?,?,?,?,?,?,?,?)
@@ -815,26 +824,17 @@ def build_reachable_routes(conn: sqlite3.Connection, transfer_wait: int) -> None
             batch.clear()
 
     if batch:
-        conn.executemany("""
-            INSERT OR REPLACE INTO reachable_routes
+        conn.executemany(f"""
+            INSERT OR REPLACE INTO {table_name}
             (from_station_id,from_station,to_station_id,to_station,duration_minutes,
              transfer_count,ride_count,path,legs,used_train_types,uses_ktx,has_unknown_train_type)
             VALUES (?,?,?,?,?,?,?,?,?,?,?,?)
         """, batch)
         conn.commit()
 
-    conn.execute("VACUUM")
-    conn.commit()
+    total = conn.execute(f"SELECT COUNT(*) FROM {table_name}").fetchone()[0]
+    print(f"{table_name}: {total:,}개")
 
-    total = conn.execute("SELECT COUNT(*) FROM reachable_routes").fetchone()[0]
-    ktx = conn.execute("SELECT COUNT(*) FROM reachable_routes WHERE uses_ktx=1").fetchone()[0]
-    unknown = conn.execute(
-        "SELECT COUNT(*) FROM reachable_routes WHERE has_unknown_train_type=1"
-    ).fetchone()[0]
-
-    print(f"reachable_routes: {total:,}개")
-    print(f"KTX 사용 경로: {ktx:,}개")
-    print(f"열차종류 미확인 포함 경로: {unknown:,}개")
 
 
 def main() -> int:
@@ -884,8 +884,24 @@ def main() -> int:
     print("[6/7] 열차별 정차역 기반 직통 구간 생성")
     build_direct_routes(conn, groups, train_type_map)
 
-    print("[7/7] 환승 포함 최단경로 생성")
-    build_reachable_routes(conn, settings.transfer_wait_minutes)
+    print("[7/8] 전체 열차 기준 최단경로 생성")
+    build_reachable_routes(
+        conn,
+        settings.transfer_wait_minutes,
+        table_name="reachable_routes",
+        exclude_ktx=False,
+    )
+
+    print("[8/8] KTX 운행편 제외 후 대체경로 생성")
+    build_reachable_routes(
+        conn,
+        settings.transfer_wait_minutes,
+        table_name="reachable_routes_no_ktx",
+        exclude_ktx=True,
+    )
+
+    conn.execute("VACUUM")
+    conn.commit()
 
     print(f"완료: {DB_PATH}")
     print("이 파일을 web/output/reachable.db 로 복사하세요.")
