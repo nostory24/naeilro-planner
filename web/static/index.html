@@ -141,6 +141,8 @@ let results = [];
 let selectedKeys = new Set();
 let excludedRegions = new Set();
 let excludedTrainTypes = new Set();
+let regionFiltersOpen = false;
+let trainFiltersOpen = false;
 let rouletteInterval = null;
 let countdownInterval = null;
 
@@ -273,22 +275,31 @@ function renderSuggestions() {
 }
 
 function toggleFilter(id) {
-  document.getElementById(id)?.classList.toggle("open");
+  const body = document.getElementById(id);
+  if (!body) return;
+
+  const willOpen = !body.classList.contains("open");
+  body.classList.toggle("open", willOpen);
+
+  if (id === "regionFilters") regionFiltersOpen = willOpen;
+  if (id === "trainFilters") trainFiltersOpen = willOpen;
 }
 
 function toggleRegion(region, checked) {
   if (checked) excludedRegions.add(region);
   else excludedRegions.delete(region);
 
-  renderRandomPanel();
+  // 패널을 다시 만들지 않으므로 펼친 상태가 유지됩니다.
   renderResults();
+  updateCandidateCount();
 }
 
 function toggleTrainType(trainType, checked) {
   if (checked) excludedTrainTypes.add(trainType);
   else excludedTrainTypes.delete(trainType);
 
-  performSearch();
+  // 열차 필터를 바꿀 때만 현재 필터를 유지한 채 재검색합니다.
+  performSearch(false);
 }
 
 function toggleRoute(key, checked) {
@@ -301,14 +312,14 @@ function selectAllRoutes() {
   results.forEach(item => {
     if (!isRegionExcluded(item)) selectedKeys.add(routeKey(item));
   });
-  renderRandomPanel();
   renderResults();
+  updateCandidateCount();
 }
 
 function deselectAllRoutes() {
   selectedKeys.clear();
-  renderRandomPanel();
   renderResults();
+  updateCandidateCount();
 }
 
 function updateCandidateCount() {
@@ -335,7 +346,7 @@ function renderRandomPanel() {
         <button class="filter-toggle secondary" onclick="toggleFilter('regionFilters')">
           <span>🗺️ 지역 제외 옵션</span><span>⌄</span>
         </button>
-        <div id="regionFilters" class="filter-body">
+        <div id="regionFilters" class="filter-body ${regionFiltersOpen ? "open" : ""}">
           <div class="filter-grid">
             ${REGION_ORDER.map(region => `
               <label class="chip">
@@ -353,7 +364,7 @@ function renderRandomPanel() {
         <button class="filter-toggle secondary" onclick="toggleFilter('trainFilters')">
           <span>🚄 열차 제외 옵션</span><span>⌄</span>
         </button>
-        <div id="trainFilters" class="filter-body">
+        <div id="trainFilters" class="filter-body ${trainFiltersOpen ? "open" : ""}">
           <div class="filter-grid">
             ${TRAIN_TYPES.map(([value,label]) => `
               <label class="chip">
@@ -364,7 +375,7 @@ function renderRandomPanel() {
               </label>
             `).join("")}
           </div>
-          <div class="hint">체크한 차종을 제거하고 남은 열차로 경로를 다시 계산합니다.</div>
+          <div class="hint">체크한 차종을 제거하고 남은 열차로 경로를 다시 계산합니다. 새 검색을 누르면 필터는 초기화됩니다.</div>
         </div>
       </div>
 
@@ -506,10 +517,17 @@ function finishRoulette(candidates) {
   scrollRandomArea();
 }
 
-async function performSearch() {
+async function performSearch(resetFilters = true) {
   stopRouletteTimers();
 
   const fromStation = stationInput.value.trim();
+
+  if (resetFilters) {
+    excludedRegions.clear();
+    excludedTrainTypes.clear();
+    regionFiltersOpen = false;
+    trainFiltersOpen = false;
+  }
 
   if (!fromStation) {
     statusArea.innerHTML = `<div class="error">출발역을 입력하세요.</div>`;
@@ -562,7 +580,7 @@ async function performSearch() {
 stationInput.addEventListener("input", renderSuggestions);
 stationInput.addEventListener("focus", renderSuggestions);
 stationInput.addEventListener("keydown", event => {
-  if (event.key === "Enter") performSearch();
+  if (event.key === "Enter") performSearch(true);
 });
 
 suggestions.addEventListener("click", event => {
@@ -578,7 +596,7 @@ document.addEventListener("click", event => {
   }
 });
 
-searchButton.addEventListener("click", performSearch);
+searchButton.addEventListener("click", () => performSearch(true));
 
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("/sw.js").catch(() => {});
