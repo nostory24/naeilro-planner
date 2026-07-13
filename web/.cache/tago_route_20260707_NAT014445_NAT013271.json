@@ -1,0 +1,1052 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "trainno": "00302",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707050000",
+            "arrplandtime": "20260707054600",
+            "adultcharge": "15600"
+          },
+          {
+            "trainno": "00002",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707050900",
+            "arrplandtime": "20260707055500",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "01122",
+            "traingradename": "ITX-마음",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707050900",
+            "arrplandtime": "20260707063900",
+            "adultcharge": "11100"
+          },
+          {
+            "trainno": "00004",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707051900",
+            "arrplandtime": "20260707060400",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "00304",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707053400",
+            "arrplandtime": "20260707061900",
+            "adultcharge": "15600"
+          },
+          {
+            "trainno": "01152",
+            "traingradename": "무궁화호",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707053700",
+            "arrplandtime": "20260707070600",
+            "adultcharge": "11100"
+          },
+          {
+            "trainno": "00006",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707053900",
+            "arrplandtime": "20260707062500",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "00306",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707055000",
+            "arrplandtime": "20260707063600",
+            "adultcharge": "15600"
+          },
+          {
+            "trainno": "01142",
+            "traingradename": "ITX-새마을",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707055300",
+            "arrplandtime": "20260707071900",
+            "adultcharge": "0"
+          },
+          {
+            "trainno": "00192",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707060100",
+            "arrplandtime": "20260707065300",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "00008",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707060900",
+            "arrplandtime": "20260707070000",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "00102",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707061100",
+            "arrplandtime": "20260707073100",
+            "adultcharge": "12000"
+          },
+          {
+            "trainno": "01002",
+            "traingradename": "ITX-마음",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707062600",
+            "arrplandtime": "20260707073700",
+            "adultcharge": "11100"
+          },
+          {
+            "trainno": "01154",
+            "traingradename": "무궁화호",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707063100",
+            "arrplandtime": "20260707080200",
+            "adultcharge": "11100"
+          },
+          {
+            "trainno": "01144",
+            "traingradename": "ITX-마음",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707065100",
+            "arrplandtime": "20260707082600",
+            "adultcharge": "0"
+          },
+          {
+            "trainno": "00308",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707065300",
+            "arrplandtime": "20260707073800",
+            "adultcharge": "15600"
+          },
+          {
+            "trainno": "00010",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707065800",
+            "arrplandtime": "20260707074400",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "00310",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707071200",
+            "arrplandtime": "20260707075800",
+            "adultcharge": "15600"
+          },
+          {
+            "trainno": "00012",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707072200",
+            "arrplandtime": "20260707081300",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "01124",
+            "traingradename": "ITX-마음",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707073100",
+            "arrplandtime": "20260707090200",
+            "adultcharge": "11100"
+          },
+          {
+            "trainno": "00312",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707073400",
+            "arrplandtime": "20260707082600",
+            "adultcharge": "15600"
+          },
+          {
+            "trainno": "00104",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707080100",
+            "arrplandtime": "20260707091700",
+            "adultcharge": "12000"
+          },
+          {
+            "trainno": "00014",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707080500",
+            "arrplandtime": "20260707085600",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "01004",
+            "traingradename": "ITX-새마을",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707082000",
+            "arrplandtime": "20260707094100",
+            "adultcharge": "11100"
+          },
+          {
+            "trainno": "00122",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707082000",
+            "arrplandtime": "20260707090600",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "00316",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707082800",
+            "arrplandtime": "20260707091400",
+            "adultcharge": "15600"
+          },
+          {
+            "trainno": "00016",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707083900",
+            "arrplandtime": "20260707093000",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "00018",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707085000",
+            "arrplandtime": "20260707093600",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "01192",
+            "traingradename": "무궁화호",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707085400",
+            "arrplandtime": "20260707102500",
+            "adultcharge": "11100"
+          },
+          {
+            "trainno": "00318",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707085900",
+            "arrplandtime": "20260707094600",
+            "adultcharge": "15600"
+          },
+          {
+            "trainno": "00020",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707090500",
+            "arrplandtime": "20260707095100",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "00320",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707091300",
+            "arrplandtime": "20260707095900",
+            "adultcharge": "15600"
+          },
+          {
+            "trainno": "00022",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707092600",
+            "arrplandtime": "20260707100500",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "00188",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707093700",
+            "arrplandtime": "20260707102300",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "01156",
+            "traingradename": "무궁화호",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707094200",
+            "arrplandtime": "20260707112300",
+            "adultcharge": "11100"
+          },
+          {
+            "trainno": "00024",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707094900",
+            "arrplandtime": "20260707104100",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "00324",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707101200",
+            "arrplandtime": "20260707105700",
+            "adultcharge": "15600"
+          },
+          {
+            "trainno": "00026",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707102800",
+            "arrplandtime": "20260707110700",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "00326",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707103300",
+            "arrplandtime": "20260707112400",
+            "adultcharge": "15600"
+          },
+          {
+            "trainno": "01006",
+            "traingradename": "ITX-마음",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707104500",
+            "arrplandtime": "20260707115200",
+            "adultcharge": "11100"
+          },
+          {
+            "trainno": "00328",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707104700",
+            "arrplandtime": "20260707113300",
+            "adultcharge": "15600"
+          },
+          {
+            "trainno": "00028",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707110000",
+            "arrplandtime": "20260707114600",
+            "adultcharge": "15600"
+          },
+          {
+            "trainno": "00030",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707120000",
+            "arrplandtime": "20260707124600",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "01008",
+            "traingradename": "ITX-새마을",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707120400",
+            "arrplandtime": "20260707132200",
+            "adultcharge": "11100"
+          },
+          {
+            "trainno": "00330",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707121500",
+            "arrplandtime": "20260707130700",
+            "adultcharge": "15600"
+          },
+          {
+            "trainno": "00032",
+            "traingradename": "KTX-청룡",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707123400",
+            "arrplandtime": "20260707131300",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "01158",
+            "traingradename": "무궁화호",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707123500",
+            "arrplandtime": "20260707140700",
+            "adultcharge": "11100"
+          },
+          {
+            "trainno": "00332",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707124000",
+            "arrplandtime": "20260707132600",
+            "adultcharge": "15600"
+          },
+          {
+            "trainno": "01194",
+            "traingradename": "무궁화호",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707124500",
+            "arrplandtime": "20260707142300",
+            "adultcharge": "0"
+          },
+          {
+            "trainno": "00334",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707125100",
+            "arrplandtime": "20260707133600",
+            "adultcharge": "15600"
+          },
+          {
+            "trainno": "00034",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707130300",
+            "arrplandtime": "20260707135500",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "01010",
+            "traingradename": "ITX-마음",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707131400",
+            "arrplandtime": "20260707143500",
+            "adultcharge": "11100"
+          },
+          {
+            "trainno": "00124",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707131700",
+            "arrplandtime": "20260707140300",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "00106",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707132200",
+            "arrplandtime": "20260707144200",
+            "adultcharge": "12000"
+          },
+          {
+            "trainno": "00336",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707133300",
+            "arrplandtime": "20260707141900",
+            "adultcharge": "15600"
+          },
+          {
+            "trainno": "01160",
+            "traingradename": "무궁화호",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707133600",
+            "arrplandtime": "20260707150000",
+            "adultcharge": "11100"
+          },
+          {
+            "trainno": "00338",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707134300",
+            "arrplandtime": "20260707142300",
+            "adultcharge": "15600"
+          },
+          {
+            "trainno": "00036",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707140000",
+            "arrplandtime": "20260707144600",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "00340",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707140900",
+            "arrplandtime": "20260707145500",
+            "adultcharge": "15600"
+          },
+          {
+            "trainno": "00038",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707142000",
+            "arrplandtime": "20260707150500",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "00342",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707142400",
+            "arrplandtime": "20260707151500",
+            "adultcharge": "15600"
+          },
+          {
+            "trainno": "00040",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707143100",
+            "arrplandtime": "20260707152200",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "01014",
+            "traingradename": "ITX-새마을",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707144200",
+            "arrplandtime": "20260707160000",
+            "adultcharge": "11100"
+          },
+          {
+            "trainno": "00344",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707144700",
+            "arrplandtime": "20260707152600",
+            "adultcharge": "15600"
+          },
+          {
+            "trainno": "00042",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707145400",
+            "arrplandtime": "20260707153300",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "01016",
+            "traingradename": "ITX-새마을",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707150400",
+            "arrplandtime": "20260707161600",
+            "adultcharge": "11100"
+          },
+          {
+            "trainno": "01162",
+            "traingradename": "무궁화호",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707151700",
+            "arrplandtime": "20260707165200",
+            "adultcharge": "11100"
+          },
+          {
+            "trainno": "00108",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707152500",
+            "arrplandtime": "20260707163700",
+            "adultcharge": "12000"
+          },
+          {
+            "trainno": "00346",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707152800",
+            "arrplandtime": "20260707161400",
+            "adultcharge": "15600"
+          },
+          {
+            "trainno": "00348",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707153900",
+            "arrplandtime": "20260707162000",
+            "adultcharge": "15600"
+          },
+          {
+            "trainno": "00044",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707154300",
+            "arrplandtime": "20260707162900",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "00352",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707155900",
+            "arrplandtime": "20260707165000",
+            "adultcharge": "15600"
+          },
+          {
+            "trainno": "00046",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707161500",
+            "arrplandtime": "20260707170700",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "00094",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707162800",
+            "arrplandtime": "20260707171400",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "00354",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707164300",
+            "arrplandtime": "20260707173400",
+            "adultcharge": "15600"
+          },
+          {
+            "trainno": "01126",
+            "traingradename": "ITX-마음",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707164700",
+            "arrplandtime": "20260707182300",
+            "adultcharge": "11100"
+          },
+          {
+            "trainno": "00048",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707165500",
+            "arrplandtime": "20260707174000",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "00050",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707170000",
+            "arrplandtime": "20260707174600",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "01018",
+            "traingradename": "ITX-마음",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707170800",
+            "arrplandtime": "20260707181500",
+            "adultcharge": "11100"
+          },
+          {
+            "trainno": "00052",
+            "traingradename": "KTX-산천(B-type)",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707172000",
+            "arrplandtime": "20260707181100",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "01020",
+            "traingradename": "ITX-마음",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707172700",
+            "arrplandtime": "20260707184300",
+            "adultcharge": "11100"
+          },
+          {
+            "trainno": "00356",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707172900",
+            "arrplandtime": "20260707181500",
+            "adultcharge": "15600"
+          },
+          {
+            "trainno": "00126",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707175000",
+            "arrplandtime": "20260707184100",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "00054",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707180000",
+            "arrplandtime": "20260707184600",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "01022",
+            "traingradename": "ITX-새마을",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707180800",
+            "arrplandtime": "20260707191700",
+            "adultcharge": "11100"
+          },
+          {
+            "trainno": "00360",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707181100",
+            "arrplandtime": "20260707185600",
+            "adultcharge": "15600"
+          },
+          {
+            "trainno": "01196",
+            "traingradename": "무궁화호",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707181500",
+            "arrplandtime": "20260707195000",
+            "adultcharge": "11100"
+          },
+          {
+            "trainno": "01024",
+            "traingradename": "ITX-마음",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707182900",
+            "arrplandtime": "20260707194000",
+            "adultcharge": "11100"
+          },
+          {
+            "trainno": "00056",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707183200",
+            "arrplandtime": "20260707192300",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "00110",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707184200",
+            "arrplandtime": "20260707200600",
+            "adultcharge": "12000"
+          },
+          {
+            "trainno": "01146",
+            "traingradename": "ITX-마음",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707184600",
+            "arrplandtime": "20260707204100",
+            "adultcharge": "0"
+          },
+          {
+            "trainno": "00362",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707185100",
+            "arrplandtime": "20260707194300",
+            "adultcharge": "15600"
+          },
+          {
+            "trainno": "00058",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707191200",
+            "arrplandtime": "20260707195100",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "00060",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707191600",
+            "arrplandtime": "20260707195500",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "01026",
+            "traingradename": "ITX-새마을",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707192400",
+            "arrplandtime": "20260707203300",
+            "adultcharge": "11100"
+          },
+          {
+            "trainno": "00194",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707193800",
+            "arrplandtime": "20260707202900",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "00128",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707195400",
+            "arrplandtime": "20260707203300",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "00366",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707200000",
+            "arrplandtime": "20260707203900",
+            "adultcharge": "15600"
+          },
+          {
+            "trainno": "01198",
+            "traingradename": "무궁화호",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707200100",
+            "arrplandtime": "20260707213500",
+            "adultcharge": "11100"
+          },
+          {
+            "trainno": "00368",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707201500",
+            "arrplandtime": "20260707210100",
+            "adultcharge": "15600"
+          },
+          {
+            "trainno": "00062",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707202300",
+            "arrplandtime": "20260707211100",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "00370",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707203000",
+            "arrplandtime": "20260707212100",
+            "adultcharge": "15600"
+          },
+          {
+            "trainno": "00112",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707203600",
+            "arrplandtime": "20260707214800",
+            "adultcharge": "12000"
+          },
+          {
+            "trainno": "00064",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707204000",
+            "arrplandtime": "20260707212600",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "00372",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707204900",
+            "arrplandtime": "20260707213500",
+            "adultcharge": "15600"
+          },
+          {
+            "trainno": "00066",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707210000",
+            "arrplandtime": "20260707215100",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "01200",
+            "traingradename": "무궁화호",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707211700",
+            "arrplandtime": "20260707224200",
+            "adultcharge": "11100"
+          },
+          {
+            "trainno": "00374",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707211900",
+            "arrplandtime": "20260707220600",
+            "adultcharge": "15600"
+          },
+          {
+            "trainno": "00068",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707212800",
+            "arrplandtime": "20260707221900",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "00070",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707214100",
+            "arrplandtime": "20260707222700",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "00376",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707214900",
+            "arrplandtime": "20260707223500",
+            "adultcharge": "15600"
+          },
+          {
+            "trainno": "00072",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707220000",
+            "arrplandtime": "20260707224600",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "00074",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707221000",
+            "arrplandtime": "20260707225500",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "00378",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707222100",
+            "arrplandtime": "20260707231200",
+            "adultcharge": "15600"
+          },
+          {
+            "trainno": "00380",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707230000",
+            "arrplandtime": "20260707234600",
+            "adultcharge": "15600"
+          }
+        ]
+      },
+      "numOfRows": 1000,
+      "pageNo": 1,
+      "totalCount": 115
+    }
+  }
+}

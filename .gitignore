@@ -1,0 +1,7 @@
+builder/.env
+builder/.cache/
+builder/output/
+__pycache__/
+*.pyc
+!web/output/
+!web/output/reachable.db

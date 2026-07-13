@@ -1,0 +1,89 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "trainno": "01892",
+            "traingradename": "무궁화호",
+            "depplacename": "포항",
+            "arrplacename": "부전",
+            "depplandtime": "20260707054900",
+            "arrplandtime": "20260707075700",
+            "adultcharge": "0"
+          },
+          {
+            "trainno": "01822",
+            "traingradename": "ITX-마음",
+            "depplacename": "포항",
+            "arrplacename": "부전",
+            "depplandtime": "20260707083800",
+            "arrplandtime": "20260707104900",
+            "adultcharge": "18100"
+          },
+          {
+            "trainno": "00752",
+            "traingradename": "KTX-이음",
+            "depplacename": "포항",
+            "arrplacename": "부전",
+            "depplandtime": "20260707120600",
+            "arrplandtime": "20260707133600",
+            "adultcharge": "18100"
+          },
+          {
+            "trainno": "01802",
+            "traingradename": "ITX-마음",
+            "depplacename": "포항",
+            "arrplacename": "부전",
+            "depplandtime": "20260707143200",
+            "arrplandtime": "20260707163200",
+            "adultcharge": "18100"
+          },
+          {
+            "trainno": "00754",
+            "traingradename": "KTX-이음",
+            "depplacename": "포항",
+            "arrplacename": "부전",
+            "depplandtime": "20260707172000",
+            "arrplandtime": "20260707185000",
+            "adultcharge": "18100"
+          },
+          {
+            "trainno": "01814",
+            "traingradename": "ITX-마음",
+            "depplacename": "포항",
+            "arrplacename": "부전",
+            "depplandtime": "20260707195200",
+            "arrplandtime": "20260707220000",
+            "adultcharge": "18100"
+          },
+          {
+            "trainno": "01806",
+            "traingradename": "ITX-마음",
+            "depplacename": "포항",
+            "arrplacename": "부전",
+            "depplandtime": "20260707203400",
+            "arrplandtime": "20260707223300",
+            "adultcharge": "18100"
+          },
+          {
+            "trainno": "00756",
+            "traingradename": "KTX-이음",
+            "depplacename": "포항",
+            "arrplacename": "부전",
+            "depplandtime": "20260707205700",
+            "arrplandtime": "20260707222900",
+            "adultcharge": "18100"
+          }
+        ]
+      },
+      "numOfRows": 1000,
+      "pageNo": 1,
+      "totalCount": 8
+    }
+  }
+}

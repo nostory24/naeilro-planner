@@ -1,0 +1,269 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "nodeid": "NAT012546",
+            "nodename": "김천"
+          },
+          {
+            "nodeid": "NAT012775",
+            "nodename": "구미"
+          },
+          {
+            "nodeid": "NAT012968",
+            "nodename": "왜관"
+          },
+          {
+            "nodeid": "NAT013629",
+            "nodename": "청도"
+          },
+          {
+            "nodeid": "NAT013395",
+            "nodename": "경산"
+          },
+          {
+            "nodeid": "NAT022053",
+            "nodename": "풍기"
+          },
+          {
+            "nodeid": "NAT022188",
+            "nodename": "영주"
+          },
+          {
+            "nodeid": "NAT022844",
+            "nodename": "의성"
+          },
+          {
+            "nodeid": "NAT022961",
+            "nodename": "탑리"
+          },
+          {
+            "nodeid": "NAT023449",
+            "nodename": "영천"
+          },
+          {
+            "nodeid": "NAT600147",
+            "nodename": "봉화"
+          },
+          {
+            "nodeid": "NAT600379",
+            "nodename": "춘양"
+          },
+          {
+            "nodeid": "NAT600527",
+            "nodename": "현동"
+          },
+          {
+            "nodeid": "NAT600768",
+            "nodename": "석포"
+          },
+          {
+            "nodeid": "NAT300200",
+            "nodename": "옥산"
+          },
+          {
+            "nodeid": "NAT300271",
+            "nodename": "청리"
+          },
+          {
+            "nodeid": "NAT300360",
+            "nodename": "상주"
+          },
+          {
+            "nodeid": "NAT300558",
+            "nodename": "함창"
+          },
+          {
+            "nodeid": "NAT300600",
+            "nodename": "점촌"
+          },
+          {
+            "nodeid": "NAT300669",
+            "nodename": "용궁"
+          },
+          {
+            "nodeid": "NAT300733",
+            "nodename": "개포"
+          },
+          {
+            "nodeid": "NAT600692",
+            "nodename": "승부"
+          },
+          {
+            "nodeid": "NAT300850",
+            "nodename": "예천"
+          },
+          {
+            "nodeid": "NAT600476",
+            "nodename": "임기"
+          },
+          {
+            "nodeid": "NAT600593",
+            "nodename": "분천"
+          },
+          {
+            "nodeid": "NAT023279",
+            "nodename": "신녕"
+          },
+          {
+            "nodeid": "NAT751296",
+            "nodename": "구안강"
+          },
+          {
+            "nodeid": "NAT751238",
+            "nodename": "사방"
+          },
+          {
+            "nodeid": "NAT750933",
+            "nodename": "입실"
+          },
+          {
+            "nodeid": "NAT023424",
+            "nodename": "북영천"
+          },
+          {
+            "nodeid": "NAT013067",
+            "nodename": "신동"
+          },
+          {
+            "nodeid": "NAT012903",
+            "nodename": "약목"
+          },
+          {
+            "nodeid": "NAT830200",
+            "nodename": "하양"
+          },
+          {
+            "nodeid": "NAT012700",
+            "nodename": "아포"
+          },
+          {
+            "nodeid": "NAT012821",
+            "nodename": "사곡"
+          },
+          {
+            "nodeid": "NAT013542",
+            "nodename": "남성현"
+          },
+          {
+            "nodeid": "NAT023601",
+            "nodename": "아화"
+          },
+          {
+            "nodeid": "NAT023821",
+            "nodename": "구서경주"
+          },
+          {
+            "nodeid": "NAT600257",
+            "nodename": "봉성"
+          },
+          {
+            "nodeid": "NAT751325",
+            "nodename": "양자동"
+          },
+          {
+            "nodeid": "NAT751354",
+            "nodename": "부조"
+          },
+          {
+            "nodeid": "NATH12383",
+            "nodename": "김천구미"
+          },
+          {
+            "nodeid": "NATH13421",
+            "nodename": "경주"
+          },
+          {
+            "nodeid": "NAT8B0351",
+            "nodename": "포항"
+          },
+          {
+            "nodeid": "NAT8B0504",
+            "nodename": "월포"
+          },
+          {
+            "nodeid": "NAT8B0595",
+            "nodename": "장사"
+          },
+          {
+            "nodeid": "NAT8B0671",
+            "nodename": "강구"
+          },
+          {
+            "nodeid": "NAT8B0737",
+            "nodename": "영덕"
+          },
+          {
+            "nodeid": "NAT022558",
+            "nodename": "안동"
+          },
+          {
+            "nodeid": "NAT8B0082",
+            "nodename": "서경주"
+          },
+          {
+            "nodeid": "NAT8B0190",
+            "nodename": "안강"
+          },
+          {
+            "nodeid": "NAT280927",
+            "nodename": "문경"
+          },
+          {
+            "nodeid": "NAT752682",
+            "nodename": "흥부"
+          },
+          {
+            "nodeid": "NAT752618",
+            "nodename": "죽변"
+          },
+          {
+            "nodeid": "NAT752540",
+            "nodename": "울진"
+          },
+          {
+            "nodeid": "NAT752428",
+            "nodename": "매화"
+          },
+          {
+            "nodeid": "NAT752319",
+            "nodename": "기성"
+          },
+          {
+            "nodeid": "NAT752245",
+            "nodename": "평해"
+          },
+          {
+            "nodeid": "NAT752196",
+            "nodename": "후포"
+          },
+          {
+            "nodeid": "NAT752102",
+            "nodename": "고래불"
+          },
+          {
+            "nodeid": "NAT752029",
+            "nodename": "영해"
+          },
+          {
+            "nodeid": "NAT600635",
+            "nodename": "비동"
+          },
+          {
+            "nodeid": "NAT600655",
+            "nodename": "양원"
+          }
+        ]
+      },
+      "numOfRows": 1000,
+      "pageNo": 1,
+      "totalCount": 63
+    }
+  }
+}

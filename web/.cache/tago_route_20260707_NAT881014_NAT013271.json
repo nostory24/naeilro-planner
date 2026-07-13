@@ -1,0 +1,179 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "trainno": "00204",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "진주",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707061000",
+            "arrplandtime": "20260707075300",
+            "adultcharge": "16300"
+          },
+          {
+            "trainno": "01942",
+            "traingradename": "무궁화호",
+            "depplacename": "진주",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707064100",
+            "arrplandtime": "20260707091600",
+            "adultcharge": "9700"
+          },
+          {
+            "trainno": "00382",
+            "traingradename": "SRT",
+            "depplacename": "진주",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707070800",
+            "arrplandtime": "20260707084900",
+            "adultcharge": "15500"
+          },
+          {
+            "trainno": "01944",
+            "traingradename": "무궁화호",
+            "depplacename": "진주",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707075500",
+            "arrplandtime": "20260707101000",
+            "adultcharge": "9700"
+          },
+          {
+            "trainno": "01112",
+            "traingradename": "ITX-새마을",
+            "depplacename": "진주",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707082200",
+            "arrplandtime": "20260707101100",
+            "adultcharge": "14500"
+          },
+          {
+            "trainno": "00206",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "진주",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707085600",
+            "arrplandtime": "20260707103600",
+            "adultcharge": "16300"
+          },
+          {
+            "trainno": "00208",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "진주",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707095900",
+            "arrplandtime": "20260707114200",
+            "adultcharge": "16300"
+          },
+          {
+            "trainno": "01946",
+            "traingradename": "무궁화호",
+            "depplacename": "진주",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707103000",
+            "arrplandtime": "20260707131100",
+            "adultcharge": "9700"
+          },
+          {
+            "trainno": "00212",
+            "traingradename": "KTX",
+            "depplacename": "진주",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707125100",
+            "arrplandtime": "20260707142800",
+            "adultcharge": "16300"
+          },
+          {
+            "trainno": "01948",
+            "traingradename": "무궁화호",
+            "depplacename": "진주",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707140500",
+            "arrplandtime": "20260707163100",
+            "adultcharge": "9700"
+          },
+          {
+            "trainno": "00214",
+            "traingradename": "KTX",
+            "depplacename": "진주",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707143000",
+            "arrplandtime": "20260707160400",
+            "adultcharge": "16300"
+          },
+          {
+            "trainno": "04022",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "진주",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707154200",
+            "arrplandtime": "20260707172700",
+            "adultcharge": "16300"
+          },
+          {
+            "trainno": "01114",
+            "traingradename": "ITX-새마을",
+            "depplacename": "진주",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707154700",
+            "arrplandtime": "20260707173100",
+            "adultcharge": "14500"
+          },
+          {
+            "trainno": "00384",
+            "traingradename": "SRT",
+            "depplacename": "진주",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707164700",
+            "arrplandtime": "20260707182900",
+            "adultcharge": "15500"
+          },
+          {
+            "trainno": "00218",
+            "traingradename": "KTX",
+            "depplacename": "진주",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707173600",
+            "arrplandtime": "20260707191000",
+            "adultcharge": "16300"
+          },
+          {
+            "trainno": "01950",
+            "traingradename": "무궁화호",
+            "depplacename": "진주",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707175300",
+            "arrplandtime": "20260707201700",
+            "adultcharge": "9700"
+          },
+          {
+            "trainno": "04026",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "진주",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707190900",
+            "arrplandtime": "20260707205000",
+            "adultcharge": "16300"
+          },
+          {
+            "trainno": "01952",
+            "traingradename": "무궁화호",
+            "depplacename": "진주",
+            "arrplacename": "동대구",
+            "depplandtime": "20260707212000",
+            "arrplandtime": "20260707233900",
+            "adultcharge": "9700"
+          }
+        ]
+      },
+      "numOfRows": 1000,
+      "pageNo": 1,
+      "totalCount": 18
+    }
+  }
+}

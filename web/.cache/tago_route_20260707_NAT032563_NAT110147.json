@@ -1,0 +1,71 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "trainno": "00404",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "목포",
+            "arrplacename": "행신",
+            "depplandtime": "20260707052300",
+            "arrplandtime": "20260707084300",
+            "adultcharge": "54500"
+          },
+          {
+            "trainno": "00408",
+            "traingradename": "KTX-산천(B-type)",
+            "depplacename": "목포",
+            "arrplacename": "행신",
+            "depplandtime": "20260707081000",
+            "arrplandtime": "20260707112700",
+            "adultcharge": "54500"
+          },
+          {
+            "trainno": "00424",
+            "traingradename": "KTX-산천(B-type)",
+            "depplacename": "목포",
+            "arrplacename": "행신",
+            "depplandtime": "20260707155000",
+            "arrplandtime": "20260707190500",
+            "adultcharge": "54500"
+          },
+          {
+            "trainno": "00482",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "목포",
+            "arrplacename": "행신",
+            "depplandtime": "20260707162500",
+            "arrplandtime": "20260707204400",
+            "adultcharge": "46300"
+          },
+          {
+            "trainno": "00434",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "목포",
+            "arrplacename": "행신",
+            "depplandtime": "20260707195500",
+            "arrplandtime": "20260707230300",
+            "adultcharge": "54500"
+          },
+          {
+            "trainno": "00440",
+            "traingradename": "KTX",
+            "depplacename": "목포",
+            "arrplacename": "행신",
+            "depplandtime": "20260707215200",
+            "arrplandtime": "20260708004100",
+            "adultcharge": "54500"
+          }
+        ]
+      },
+      "numOfRows": 1000,
+      "pageNo": 1,
+      "totalCount": 6
+    }
+  }
+}

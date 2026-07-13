@@ -1,0 +1,129 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "nodeid": "NAT012124",
+            "nodename": "영동"
+          },
+          {
+            "nodeid": "NAT011833",
+            "nodename": "옥천"
+          },
+          {
+            "nodeid": "NAT050114",
+            "nodename": "청주"
+          },
+          {
+            "nodeid": "NAT050366",
+            "nodename": "증평"
+          },
+          {
+            "nodeid": "NAT050596",
+            "nodename": "음성"
+          },
+          {
+            "nodeid": "NAT050827",
+            "nodename": "충주"
+          },
+          {
+            "nodeid": "NAT050881",
+            "nodename": "목행"
+          },
+          {
+            "nodeid": "NAT021549",
+            "nodename": "제천"
+          },
+          {
+            "nodeid": "NAT021723",
+            "nodename": "도담"
+          },
+          {
+            "nodeid": "NAT021784",
+            "nodename": "단양"
+          },
+          {
+            "nodeid": "NAT012270",
+            "nodename": "황간"
+          },
+          {
+            "nodeid": "NAT012355",
+            "nodename": "추풍령"
+          },
+          {
+            "nodeid": "NAT050215",
+            "nodename": "오근장"
+          },
+          {
+            "nodeid": "NAT050719",
+            "nodename": "주덕"
+          },
+          {
+            "nodeid": "NAT021478",
+            "nodename": "봉양"
+          },
+          {
+            "nodeid": "NAT051006",
+            "nodename": "삼탄"
+          },
+          {
+            "nodeid": "NAT012016",
+            "nodename": "심천"
+          },
+          {
+            "nodeid": "NAT050244",
+            "nodename": "청주공항"
+          },
+          {
+            "nodeid": "NAT050044",
+            "nodename": "오송"
+          },
+          {
+            "nodeid": "NAT011916",
+            "nodename": "이원"
+          },
+          {
+            "nodeid": "NAT011972",
+            "nodename": "지탄"
+          },
+          {
+            "nodeid": "NAT012054",
+            "nodename": "각계"
+          },
+          {
+            "nodeid": "NAT650050",
+            "nodename": "장락"
+          },
+          {
+            "nodeid": "NAT280212",
+            "nodename": "감곡장호원"
+          },
+          {
+            "nodeid": "NAT280358",
+            "nodename": "앙성온천"
+          },
+          {
+            "nodeid": "NAT280666",
+            "nodename": "살미"
+          },
+          {
+            "nodeid": "NAT280751",
+            "nodename": "수안보온천"
+          },
+          {
+            "nodeid": "NAT280814",
+            "nodename": "연풍"
+          }
+        ]
+      },
+      "numOfRows": 1000,
+      "pageNo": 1,
+      "totalCount": 28
+    }
+  }
+}

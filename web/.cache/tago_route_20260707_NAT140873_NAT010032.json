@@ -1,0 +1,179 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "trainno": "02002",
+            "traingradename": "ITX-청춘",
+            "depplacename": "춘천",
+            "arrplacename": "용산",
+            "depplandtime": "20260707060700",
+            "arrplandtime": "20260707073200",
+            "adultcharge": "9800"
+          },
+          {
+            "trainno": "02004",
+            "traingradename": "ITX-청춘",
+            "depplacename": "춘천",
+            "arrplacename": "용산",
+            "depplandtime": "20260707065400",
+            "arrplandtime": "20260707082000",
+            "adultcharge": "9800"
+          },
+          {
+            "trainno": "02006",
+            "traingradename": "ITX-청춘",
+            "depplacename": "춘천",
+            "arrplacename": "용산",
+            "depplandtime": "20260707073200",
+            "arrplandtime": "20260707085800",
+            "adultcharge": "9800"
+          },
+          {
+            "trainno": "02008",
+            "traingradename": "ITX-청춘",
+            "depplacename": "춘천",
+            "arrplacename": "용산",
+            "depplandtime": "20260707081100",
+            "arrplandtime": "20260707093600",
+            "adultcharge": "9800"
+          },
+          {
+            "trainno": "02010",
+            "traingradename": "ITX-청춘",
+            "depplacename": "춘천",
+            "arrplacename": "용산",
+            "depplandtime": "20260707092200",
+            "arrplandtime": "20260707103800",
+            "adultcharge": "9800"
+          },
+          {
+            "trainno": "02012",
+            "traingradename": "ITX-청춘",
+            "depplacename": "춘천",
+            "arrplacename": "용산",
+            "depplandtime": "20260707102200",
+            "arrplandtime": "20260707113800",
+            "adultcharge": "9800"
+          },
+          {
+            "trainno": "02014",
+            "traingradename": "ITX-청춘",
+            "depplacename": "춘천",
+            "arrplacename": "용산",
+            "depplandtime": "20260707111600",
+            "arrplandtime": "20260707123300",
+            "adultcharge": "9800"
+          },
+          {
+            "trainno": "02016",
+            "traingradename": "ITX-청춘",
+            "depplacename": "춘천",
+            "arrplacename": "용산",
+            "depplandtime": "20260707120300",
+            "arrplandtime": "20260707131800",
+            "adultcharge": "9800"
+          },
+          {
+            "trainno": "02018",
+            "traingradename": "ITX-청춘",
+            "depplacename": "춘천",
+            "arrplacename": "용산",
+            "depplandtime": "20260707130900",
+            "arrplandtime": "20260707142300",
+            "adultcharge": "9800"
+          },
+          {
+            "trainno": "02020",
+            "traingradename": "ITX-청춘",
+            "depplacename": "춘천",
+            "arrplacename": "용산",
+            "depplandtime": "20260707140600",
+            "arrplandtime": "20260707152700",
+            "adultcharge": "9800"
+          },
+          {
+            "trainno": "02022",
+            "traingradename": "ITX-청춘",
+            "depplacename": "춘천",
+            "arrplacename": "용산",
+            "depplandtime": "20260707145300",
+            "arrplandtime": "20260707161000",
+            "adultcharge": "9800"
+          },
+          {
+            "trainno": "02024",
+            "traingradename": "ITX-청춘",
+            "depplacename": "춘천",
+            "arrplacename": "용산",
+            "depplandtime": "20260707160200",
+            "arrplandtime": "20260707172100",
+            "adultcharge": "9800"
+          },
+          {
+            "trainno": "02026",
+            "traingradename": "ITX-청춘",
+            "depplacename": "춘천",
+            "arrplacename": "용산",
+            "depplandtime": "20260707165600",
+            "arrplandtime": "20260707181200",
+            "adultcharge": "9800"
+          },
+          {
+            "trainno": "02028",
+            "traingradename": "ITX-청춘",
+            "depplacename": "춘천",
+            "arrplacename": "용산",
+            "depplandtime": "20260707181500",
+            "arrplandtime": "20260707193500",
+            "adultcharge": "9800"
+          },
+          {
+            "trainno": "02030",
+            "traingradename": "ITX-청춘",
+            "depplacename": "춘천",
+            "arrplacename": "용산",
+            "depplandtime": "20260707185300",
+            "arrplandtime": "20260707201500",
+            "adultcharge": "9800"
+          },
+          {
+            "trainno": "02032",
+            "traingradename": "ITX-청춘",
+            "depplacename": "춘천",
+            "arrplacename": "용산",
+            "depplandtime": "20260707194000",
+            "arrplandtime": "20260707210200",
+            "adultcharge": "9800"
+          },
+          {
+            "trainno": "02034",
+            "traingradename": "ITX-청춘",
+            "depplacename": "춘천",
+            "arrplacename": "용산",
+            "depplandtime": "20260707211000",
+            "arrplandtime": "20260707223100",
+            "adultcharge": "9800"
+          },
+          {
+            "trainno": "02036",
+            "traingradename": "ITX-청춘",
+            "depplacename": "춘천",
+            "arrplacename": "용산",
+            "depplandtime": "20260707221400",
+            "arrplandtime": "20260707232800",
+            "adultcharge": "9800"
+          }
+        ]
+      },
+      "numOfRows": 1000,
+      "pageNo": 1,
+      "totalCount": 18
+    }
+  }
+}

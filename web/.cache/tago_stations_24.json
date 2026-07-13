@@ -1,0 +1,37 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "nodeid": "NAT031857",
+            "nodename": "광주송정"
+          },
+          {
+            "nodeid": "NAT883012",
+            "nodename": "광주"
+          },
+          {
+            "nodeid": "NAT883086",
+            "nodename": "극락강"
+          },
+          {
+            "nodeid": "NAT882904",
+            "nodename": "효천"
+          },
+          {
+            "nodeid": "NAT882936",
+            "nodename": "서광주"
+          }
+        ]
+      },
+      "numOfRows": 1000,
+      "pageNo": 1,
+      "totalCount": 5
+    }
+  }
+}

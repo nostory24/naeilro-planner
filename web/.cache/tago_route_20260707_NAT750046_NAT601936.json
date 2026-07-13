@@ -1,0 +1,44 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "trainno": "00751",
+            "traingradename": "KTX-이음",
+            "depplacename": "부전",
+            "arrplacename": "강릉",
+            "depplandtime": "20260707075000",
+            "arrplandtime": "20260707114000",
+            "adultcharge": "46800"
+          },
+          {
+            "trainno": "00753",
+            "traingradename": "KTX-이음",
+            "depplacename": "부전",
+            "arrplacename": "강릉",
+            "depplandtime": "20260707135800",
+            "arrplandtime": "20260707175100",
+            "adultcharge": "46800"
+          },
+          {
+            "trainno": "00755",
+            "traingradename": "KTX-이음",
+            "depplacename": "부전",
+            "arrplacename": "강릉",
+            "depplandtime": "20260707194000",
+            "arrplandtime": "20260707233200",
+            "adultcharge": "46800"
+          }
+        ]
+      },
+      "numOfRows": 1000,
+      "pageNo": 1,
+      "totalCount": 3
+    }
+  }
+}

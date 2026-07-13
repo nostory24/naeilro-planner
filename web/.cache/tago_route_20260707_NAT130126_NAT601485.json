@@ -1,0 +1,107 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "trainno": "00841",
+            "traingradename": "KTX-이음",
+            "depplacename": "청량리",
+            "arrplacename": "동해",
+            "depplandtime": "20260707070500",
+            "arrplandtime": "20260707092800",
+            "adultcharge": "29700"
+          },
+          {
+            "trainno": "01671",
+            "traingradename": "무궁화호",
+            "depplacename": "청량리",
+            "arrplacename": "동해",
+            "depplandtime": "20260707073400",
+            "arrplandtime": "20260707122500",
+            "adultcharge": "27500"
+          },
+          {
+            "trainno": "01673",
+            "traingradename": "무궁화호",
+            "depplacename": "청량리",
+            "arrplacename": "동해",
+            "depplandtime": "20260707095100",
+            "arrplandtime": "20260707142800",
+            "adultcharge": "27500"
+          },
+          {
+            "trainno": "00843",
+            "traingradename": "KTX-이음",
+            "depplacename": "청량리",
+            "arrplacename": "동해",
+            "depplandtime": "20260707112000",
+            "arrplandtime": "20260707133600",
+            "adultcharge": "29700"
+          },
+          {
+            "trainno": "01675",
+            "traingradename": "무궁화호",
+            "depplacename": "청량리",
+            "arrplacename": "동해",
+            "depplandtime": "20260707121600",
+            "arrplandtime": "20260707170500",
+            "adultcharge": "27500"
+          },
+          {
+            "trainno": "00845",
+            "traingradename": "KTX-이음",
+            "depplacename": "청량리",
+            "arrplacename": "동해",
+            "depplandtime": "20260707152300",
+            "arrplandtime": "20260707174300",
+            "adultcharge": "29700"
+          },
+          {
+            "trainno": "01641",
+            "traingradename": "ITX-마음",
+            "depplacename": "청량리",
+            "arrplacename": "동해",
+            "depplandtime": "20260707170800",
+            "arrplandtime": "20260707210800",
+            "adultcharge": "27500"
+          },
+          {
+            "trainno": "00847",
+            "traingradename": "KTX-이음",
+            "depplacename": "청량리",
+            "arrplacename": "동해",
+            "depplandtime": "20260707184100",
+            "arrplandtime": "20260707205700",
+            "adultcharge": "29700"
+          },
+          {
+            "trainno": "01677",
+            "traingradename": "무궁화호",
+            "depplacename": "청량리",
+            "arrplacename": "동해",
+            "depplandtime": "20260707191000",
+            "arrplandtime": "20260707235000",
+            "adultcharge": "27500"
+          },
+          {
+            "trainno": "00849",
+            "traingradename": "KTX-이음",
+            "depplacename": "청량리",
+            "arrplacename": "동해",
+            "depplandtime": "20260707201100",
+            "arrplandtime": "20260707222600",
+            "adultcharge": "29700"
+          }
+        ]
+      },
+      "numOfRows": 1000,
+      "pageNo": 1,
+      "totalCount": 10
+    }
+  }
+}

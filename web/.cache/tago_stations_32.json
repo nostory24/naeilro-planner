@@ -1,0 +1,209 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "nodeid": "NAT601605",
+            "nodename": "망상"
+          },
+          {
+            "nodeid": "NAT600870",
+            "nodename": "철암"
+          },
+          {
+            "nodeid": "NAT601122",
+            "nodename": "도계"
+          },
+          {
+            "nodeid": "NAT601485",
+            "nodename": "동해"
+          },
+          {
+            "nodeid": "NAT601545",
+            "nodename": "묵호"
+          },
+          {
+            "nodeid": "NAT601936",
+            "nodename": "강릉"
+          },
+          {
+            "nodeid": "NAT650177",
+            "nodename": "쌍룡"
+          },
+          {
+            "nodeid": "NAT650341",
+            "nodename": "영월"
+          },
+          {
+            "nodeid": "NAT650515",
+            "nodename": "예미"
+          },
+          {
+            "nodeid": "NAT650722",
+            "nodename": "민둥산"
+          },
+          {
+            "nodeid": "NAT650782",
+            "nodename": "사북"
+          },
+          {
+            "nodeid": "NAT650828",
+            "nodename": "고한"
+          },
+          {
+            "nodeid": "NAT650978",
+            "nodename": "태백"
+          },
+          {
+            "nodeid": "NAT140701",
+            "nodename": "강촌"
+          },
+          {
+            "nodeid": "NAT140840",
+            "nodename": "남춘천"
+          },
+          {
+            "nodeid": "NAT140873",
+            "nodename": "춘천"
+          },
+          {
+            "nodeid": "NAT020986",
+            "nodename": "동화"
+          },
+          {
+            "nodeid": "NAT021357",
+            "nodename": "신림"
+          },
+          {
+            "nodeid": "NAT650253",
+            "nodename": "연당"
+          },
+          {
+            "nodeid": "NAT650567",
+            "nodename": "함백"
+          },
+          {
+            "nodeid": "NAT610064",
+            "nodename": "별어곡"
+          },
+          {
+            "nodeid": "NAT610137",
+            "nodename": "선평"
+          },
+          {
+            "nodeid": "NAT610226",
+            "nodename": "정선"
+          },
+          {
+            "nodeid": "NAT610326",
+            "nodename": "나전"
+          },
+          {
+            "nodeid": "NAT610387",
+            "nodename": "아우라지"
+          },
+          {
+            "nodeid": "NAT140787",
+            "nodename": "김유정"
+          },
+          {
+            "nodeid": "NAT140681",
+            "nodename": "백양리"
+          },
+          {
+            "nodeid": "NAT601774",
+            "nodename": "정동진"
+          },
+          {
+            "nodeid": "NAT601275",
+            "nodename": "신기"
+          },
+          {
+            "nodeid": "NAT630064",
+            "nodename": "추암"
+          },
+          {
+            "nodeid": "NAT630078",
+            "nodename": "삼척해변"
+          },
+          {
+            "nodeid": "NAT021033",
+            "nodename": "만종"
+          },
+          {
+            "nodeid": "NAT021175",
+            "nodename": "반곡"
+          },
+          {
+            "nodeid": "NAT600830",
+            "nodename": "동점"
+          },
+          {
+            "nodeid": "NAT630129",
+            "nodename": "삼척"
+          },
+          {
+            "nodeid": "NAT650918",
+            "nodename": "추전"
+          },
+          {
+            "nodeid": "NAT651053",
+            "nodename": "동백산"
+          },
+          {
+            "nodeid": "NATN10230",
+            "nodename": "횡성"
+          },
+          {
+            "nodeid": "NATN10428",
+            "nodename": "둔내"
+          },
+          {
+            "nodeid": "NATN10625",
+            "nodename": "평창"
+          },
+          {
+            "nodeid": "NATN10787",
+            "nodename": "진부"
+          },
+          {
+            "nodeid": "NAT020864",
+            "nodename": "서원주"
+          },
+          {
+            "nodeid": "NAT020947",
+            "nodename": "원주"
+          },
+          {
+            "nodeid": "NAT752946",
+            "nodename": "근덕"
+          },
+          {
+            "nodeid": "NAT752850",
+            "nodename": "임원"
+          },
+          {
+            "nodeid": "NAT752787",
+            "nodename": "옥원"
+          },
+          {
+            "nodeid": "NAT601602",
+            "nodename": "망상해변"
+          },
+          {
+            "nodeid": "NAT130944",
+            "nodename": "백마고지"
+          }
+        ]
+      },
+      "numOfRows": 1000,
+      "pageNo": 1,
+      "totalCount": 48
+    }
+  }
+}

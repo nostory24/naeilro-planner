@@ -1,0 +1,29 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "nodeid": "NAT013271",
+            "nodename": "동대구"
+          },
+          {
+            "nodeid": "NAT013239",
+            "nodename": "대구"
+          },
+          {
+            "nodeid": "NAT013189",
+            "nodename": "서대구"
+          }
+        ]
+      },
+      "numOfRows": 1000,
+      "pageNo": 1,
+      "totalCount": 3
+    }
+  }
+}

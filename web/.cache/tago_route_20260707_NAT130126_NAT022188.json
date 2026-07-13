@@ -1,0 +1,143 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "trainno": "00701",
+            "traingradename": "KTX-이음",
+            "depplacename": "청량리",
+            "arrplacename": "영주",
+            "depplandtime": "20260707054000",
+            "arrplandtime": "20260707071700",
+            "adultcharge": "23300"
+          },
+          {
+            "trainno": "00703",
+            "traingradename": "KTX-이음",
+            "depplacename": "청량리",
+            "arrplacename": "영주",
+            "depplandtime": "20260707062700",
+            "arrplandtime": "20260707081500",
+            "adultcharge": "23300"
+          },
+          {
+            "trainno": "01601",
+            "traingradename": "ITX-마음",
+            "depplacename": "청량리",
+            "arrplacename": "영주",
+            "depplandtime": "20260707063800",
+            "arrplandtime": "20260707085300",
+            "adultcharge": "23300"
+          },
+          {
+            "trainno": "00705",
+            "traingradename": "KTX-이음",
+            "depplacename": "청량리",
+            "arrplacename": "영주",
+            "depplandtime": "20260707091800",
+            "arrplandtime": "20260707105500",
+            "adultcharge": "23300"
+          },
+          {
+            "trainno": "01611",
+            "traingradename": "ITX-마음",
+            "depplacename": "청량리",
+            "arrplacename": "영주",
+            "depplandtime": "20260707104000",
+            "arrplandtime": "20260707125100",
+            "adultcharge": "23300"
+          },
+          {
+            "trainno": "00707",
+            "traingradename": "KTX-이음",
+            "depplacename": "청량리",
+            "arrplacename": "영주",
+            "depplandtime": "20260707112000",
+            "arrplandtime": "20260707130900",
+            "adultcharge": "23300"
+          },
+          {
+            "trainno": "00709",
+            "traingradename": "KTX-이음",
+            "depplacename": "청량리",
+            "arrplacename": "영주",
+            "depplandtime": "20260707131600",
+            "arrplandtime": "20260707145500",
+            "adultcharge": "23300"
+          },
+          {
+            "trainno": "00711",
+            "traingradename": "KTX-이음",
+            "depplacename": "청량리",
+            "arrplacename": "영주",
+            "depplandtime": "20260707144000",
+            "arrplandtime": "20260707162100",
+            "adultcharge": "23300"
+          },
+          {
+            "trainno": "01603",
+            "traingradename": "ITX-마음",
+            "depplacename": "청량리",
+            "arrplacename": "영주",
+            "depplandtime": "20260707144800",
+            "arrplandtime": "20260707170800",
+            "adultcharge": "23300"
+          },
+          {
+            "trainno": "00713",
+            "traingradename": "KTX-이음",
+            "depplacename": "청량리",
+            "arrplacename": "영주",
+            "depplandtime": "20260707163200",
+            "arrplandtime": "20260707182000",
+            "adultcharge": "23300"
+          },
+          {
+            "trainno": "01613",
+            "traingradename": "ITX-마음",
+            "depplacename": "청량리",
+            "arrplacename": "영주",
+            "depplandtime": "20260707173800",
+            "arrplandtime": "20260707195400",
+            "adultcharge": "23300"
+          },
+          {
+            "trainno": "00715",
+            "traingradename": "KTX-이음",
+            "depplacename": "청량리",
+            "arrplacename": "영주",
+            "depplandtime": "20260707190000",
+            "arrplandtime": "20260707204000",
+            "adultcharge": "23300"
+          },
+          {
+            "trainno": "00717",
+            "traingradename": "KTX-이음",
+            "depplacename": "청량리",
+            "arrplacename": "영주",
+            "depplandtime": "20260707215200",
+            "arrplandtime": "20260707233600",
+            "adultcharge": "23300"
+          },
+          {
+            "trainno": "01661",
+            "traingradename": "무궁화호",
+            "depplacename": "청량리",
+            "arrplacename": "영주",
+            "depplandtime": "20260707220000",
+            "arrplandtime": "20260708001400",
+            "adultcharge": "23300"
+          }
+        ]
+      },
+      "numOfRows": 1000,
+      "pageNo": 1,
+      "totalCount": 14
+    }
+  }
+}

@@ -1,0 +1,224 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "trainno": "00253",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "동대구",
+            "arrplacename": "포항",
+            "depplandtime": "20260707000900",
+            "arrplandtime": "20260707004400",
+            "adultcharge": "10900"
+          },
+          {
+            "trainno": "01851",
+            "traingradename": "누리로",
+            "depplacename": "동대구",
+            "arrplacename": "포항",
+            "depplandtime": "20260707062500",
+            "arrplandtime": "20260707074000",
+            "adultcharge": "0"
+          },
+          {
+            "trainno": "00231",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "동대구",
+            "arrplacename": "포항",
+            "depplandtime": "20260707073300",
+            "arrplandtime": "20260707080800",
+            "adultcharge": "10900"
+          },
+          {
+            "trainno": "00391",
+            "traingradename": "SRT",
+            "depplacename": "동대구",
+            "arrplacename": "포항",
+            "depplandtime": "20260707081700",
+            "arrplandtime": "20260707085200",
+            "adultcharge": "10100"
+          },
+          {
+            "trainno": "00233",
+            "traingradename": "KTX",
+            "depplacename": "동대구",
+            "arrplacename": "포항",
+            "depplandtime": "20260707083400",
+            "arrplandtime": "20260707090900",
+            "adultcharge": "10900"
+          },
+          {
+            "trainno": "00235",
+            "traingradename": "KTX-산천(B-type)",
+            "depplacename": "동대구",
+            "arrplacename": "포항",
+            "depplandtime": "20260707100400",
+            "arrplandtime": "20260707103900",
+            "adultcharge": "10900"
+          },
+          {
+            "trainno": "04031",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "동대구",
+            "arrplacename": "포항",
+            "depplandtime": "20260707102000",
+            "arrplandtime": "20260707105500",
+            "adultcharge": "10900"
+          },
+          {
+            "trainno": "00237",
+            "traingradename": "KTX-산천(B-type)",
+            "depplacename": "동대구",
+            "arrplacename": "포항",
+            "depplandtime": "20260707111400",
+            "arrplandtime": "20260707114900",
+            "adultcharge": "10900"
+          },
+          {
+            "trainno": "01853",
+            "traingradename": "누리로",
+            "depplacename": "동대구",
+            "arrplacename": "포항",
+            "depplandtime": "20260707121400",
+            "arrplandtime": "20260707133000",
+            "adultcharge": "0"
+          },
+          {
+            "trainno": "00239",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "동대구",
+            "arrplacename": "포항",
+            "depplandtime": "20260707123800",
+            "arrplandtime": "20260707131300",
+            "adultcharge": "10900"
+          },
+          {
+            "trainno": "00241",
+            "traingradename": "KTX",
+            "depplacename": "동대구",
+            "arrplacename": "포항",
+            "depplandtime": "20260707142500",
+            "arrplandtime": "20260707150000",
+            "adultcharge": "10900"
+          },
+          {
+            "trainno": "00243",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "동대구",
+            "arrplacename": "포항",
+            "depplandtime": "20260707145600",
+            "arrplandtime": "20260707153200",
+            "adultcharge": "10900"
+          },
+          {
+            "trainno": "01821",
+            "traingradename": "ITX-마음",
+            "depplacename": "동대구",
+            "arrplacename": "포항",
+            "depplandtime": "20260707151500",
+            "arrplandtime": "20260707162500",
+            "adultcharge": "0"
+          },
+          {
+            "trainno": "00245",
+            "traingradename": "KTX",
+            "depplacename": "동대구",
+            "arrplacename": "포항",
+            "depplandtime": "20260707162900",
+            "arrplandtime": "20260707170400",
+            "adultcharge": "10900"
+          },
+          {
+            "trainno": "00255",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "동대구",
+            "arrplacename": "포항",
+            "depplandtime": "20260707170000",
+            "arrplandtime": "20260707173500",
+            "adultcharge": "10900"
+          },
+          {
+            "trainno": "04033",
+            "traingradename": "KTX-산천(B-type)",
+            "depplacename": "동대구",
+            "arrplacename": "포항",
+            "depplandtime": "20260707173000",
+            "arrplandtime": "20260707180500",
+            "adultcharge": "10900"
+          },
+          {
+            "trainno": "00247",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "동대구",
+            "arrplacename": "포항",
+            "depplandtime": "20260707180800",
+            "arrplandtime": "20260707184400",
+            "adultcharge": "10900"
+          },
+          {
+            "trainno": "01891",
+            "traingradename": "무궁화호",
+            "depplacename": "동대구",
+            "arrplacename": "포항",
+            "depplandtime": "20260707181500",
+            "arrplandtime": "20260707193500",
+            "adultcharge": "7200"
+          },
+          {
+            "trainno": "00393",
+            "traingradename": "SRT",
+            "depplacename": "동대구",
+            "arrplacename": "포항",
+            "depplandtime": "20260707182600",
+            "arrplandtime": "20260707190200",
+            "adultcharge": "10100"
+          },
+          {
+            "trainno": "01865",
+            "traingradename": "누리로",
+            "depplacename": "동대구",
+            "arrplacename": "포항",
+            "depplandtime": "20260707184400",
+            "arrplandtime": "20260707195300",
+            "adultcharge": "0"
+          },
+          {
+            "trainno": "00249",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "동대구",
+            "arrplacename": "포항",
+            "depplandtime": "20260707192900",
+            "arrplandtime": "20260707200400",
+            "adultcharge": "10900"
+          },
+          {
+            "trainno": "00251",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "동대구",
+            "arrplacename": "포항",
+            "depplandtime": "20260707223300",
+            "arrplandtime": "20260707230800",
+            "adultcharge": "10900"
+          },
+          {
+            "trainno": "00253",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "동대구",
+            "arrplacename": "포항",
+            "depplandtime": "20260708000900",
+            "arrplandtime": "20260708004400",
+            "adultcharge": "10900"
+          }
+        ]
+      },
+      "numOfRows": 1000,
+      "pageNo": 1,
+      "totalCount": 23
+    }
+  }
+}

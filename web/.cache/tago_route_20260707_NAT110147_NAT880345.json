@@ -1,0 +1,53 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "trainno": "04021",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "행신",
+            "arrplacename": "마산",
+            "depplandtime": "20260707102100",
+            "arrplandtime": "20260707135000",
+            "adultcharge": "54600"
+          },
+          {
+            "trainno": "00211",
+            "traingradename": "KTX",
+            "depplacename": "행신",
+            "arrplacename": "마산",
+            "depplandtime": "20260707122600",
+            "arrplandtime": "20260707155300",
+            "adultcharge": "54600"
+          },
+          {
+            "trainno": "00225",
+            "traingradename": "KTX",
+            "depplacename": "행신",
+            "arrplacename": "마산",
+            "depplandtime": "20260707131500",
+            "arrplandtime": "20260707163900",
+            "adultcharge": "54200"
+          },
+          {
+            "trainno": "00219",
+            "traingradename": "KTX",
+            "depplacename": "행신",
+            "arrplacename": "마산",
+            "depplandtime": "20260707174000",
+            "arrplandtime": "20260707211100",
+            "adultcharge": "54200"
+          }
+        ]
+      },
+      "numOfRows": 1000,
+      "pageNo": 1,
+      "totalCount": 4
+    }
+  }
+}

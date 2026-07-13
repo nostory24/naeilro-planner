@@ -1,0 +1,53 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "trainno": "01961",
+            "traingradename": "무궁화호",
+            "depplacename": "부전",
+            "arrplacename": "순천",
+            "depplandtime": "20260707061200",
+            "arrplandtime": "20260707093900",
+            "adultcharge": "12400"
+          },
+          {
+            "trainno": "01981",
+            "traingradename": "무궁화호",
+            "depplacename": "부전",
+            "arrplacename": "순천",
+            "depplandtime": "20260707111700",
+            "arrplandtime": "20260707142900",
+            "adultcharge": "19200"
+          },
+          {
+            "trainno": "01931",
+            "traingradename": "새마을호",
+            "depplacename": "부전",
+            "arrplacename": "순천",
+            "depplandtime": "20260707150600",
+            "arrplandtime": "20260707174900",
+            "adultcharge": "19200"
+          },
+          {
+            "trainno": "01963",
+            "traingradename": "무궁화호",
+            "depplacename": "부전",
+            "arrplacename": "순천",
+            "depplandtime": "20260707185300",
+            "arrplandtime": "20260707220500",
+            "adultcharge": "12400"
+          }
+        ]
+      },
+      "numOfRows": 1000,
+      "pageNo": 1,
+      "totalCount": 4
+    }
+  }
+}

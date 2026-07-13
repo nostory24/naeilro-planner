@@ -1,0 +1,737 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "trainno": "00401",
+            "traingradename": "KTX-산천(B-type)",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707050800",
+            "arrplandtime": "20260707063000",
+            "adultcharge": "32000"
+          },
+          {
+            "trainno": "00501",
+            "traingradename": "KTX-산천(B-type)",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707050800",
+            "arrplandtime": "20260707063000",
+            "adultcharge": "32000"
+          },
+          {
+            "trainno": "01271",
+            "traingradename": "무궁화호",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707053200",
+            "arrplandtime": "20260707092100",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "01571",
+            "traingradename": "무궁화호",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707054400",
+            "arrplandtime": "20260707085600",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "00403",
+            "traingradename": "KTX-산천(B-type)",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707054800",
+            "arrplandtime": "20260707070900",
+            "adultcharge": "32000"
+          },
+          {
+            "trainno": "00471",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707061000",
+            "arrplandtime": "20260707081800",
+            "adultcharge": "30600"
+          },
+          {
+            "trainno": "01273",
+            "traingradename": "무궁화호",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707061800",
+            "arrplandtime": "20260707100500",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "01421",
+            "traingradename": "ITX-새마을",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707062400",
+            "arrplandtime": "20260707094600",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "00405",
+            "traingradename": "KTX",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707062900",
+            "arrplandtime": "20260707075100",
+            "adultcharge": "32000"
+          },
+          {
+            "trainno": "00503",
+            "traingradename": "KTX",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707071000",
+            "arrplandtime": "20260707083700",
+            "adultcharge": "32000"
+          },
+          {
+            "trainno": "01501",
+            "traingradename": "ITX-새마을",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707071400",
+            "arrplandtime": "20260707100800",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "01275",
+            "traingradename": "무궁화호",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707072400",
+            "arrplandtime": "20260707112000",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "01401",
+            "traingradename": "ITX-새마을",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707073400",
+            "arrplandtime": "20260707105000",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "00441",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707073800",
+            "arrplandtime": "20260707085300",
+            "adultcharge": "32000"
+          },
+          {
+            "trainno": "00581",
+            "traingradename": "KTX",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707074300",
+            "arrplandtime": "20260707094100",
+            "adultcharge": "30600"
+          },
+          {
+            "trainno": "00407",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707074700",
+            "arrplandtime": "20260707090500",
+            "adultcharge": "32000"
+          },
+          {
+            "trainno": "00409",
+            "traingradename": "KTX",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707082000",
+            "arrplandtime": "20260707093600",
+            "adultcharge": "32000"
+          },
+          {
+            "trainno": "00505",
+            "traingradename": "KTX",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707084000",
+            "arrplandtime": "20260707100200",
+            "adultcharge": "32000"
+          },
+          {
+            "trainno": "01423",
+            "traingradename": "ITX-새마을",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707084400",
+            "arrplandtime": "20260707113300",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "01201",
+            "traingradename": "새마을호",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707091400",
+            "arrplandtime": "20260707124900",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "00411",
+            "traingradename": "KTX",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707091900",
+            "arrplandtime": "20260707103400",
+            "adultcharge": "32000"
+          },
+          {
+            "trainno": "01573",
+            "traingradename": "무궁화호",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707093800",
+            "arrplandtime": "20260707130700",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "00475",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707094400",
+            "arrplandtime": "20260707114800",
+            "adultcharge": "30600"
+          },
+          {
+            "trainno": "01503",
+            "traingradename": "ITX-마음",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707094700",
+            "arrplandtime": "20260707123200",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "01403",
+            "traingradename": "ITX-마음",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707094700",
+            "arrplandtime": "20260707123200",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "00507",
+            "traingradename": "KTX-산천(B-type)",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707095300",
+            "arrplandtime": "20260707112100",
+            "adultcharge": "32000"
+          },
+          {
+            "trainno": "01441",
+            "traingradename": "ITX-새마을",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707095600",
+            "arrplandtime": "20260707125400",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "00585",
+            "traingradename": "KTX",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707100400",
+            "arrplandtime": "20260707120700",
+            "adultcharge": "30600"
+          },
+          {
+            "trainno": "01277",
+            "traingradename": "무궁화호",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707103300",
+            "arrplandtime": "20260707141600",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "00413",
+            "traingradename": "KTX",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707104000",
+            "arrplandtime": "20260707115600",
+            "adultcharge": "32000"
+          },
+          {
+            "trainno": "00509",
+            "traingradename": "KTX",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707105300",
+            "arrplandtime": "20260707122000",
+            "adultcharge": "32000"
+          },
+          {
+            "trainno": "01405",
+            "traingradename": "ITX-새마을",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707120700",
+            "arrplandtime": "20260707150600",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "00587",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707121100",
+            "arrplandtime": "20260707141500",
+            "adultcharge": "30600"
+          },
+          {
+            "trainno": "00415",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707121800",
+            "arrplandtime": "20260707134100",
+            "adultcharge": "32000"
+          },
+          {
+            "trainno": "00511",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707121800",
+            "arrplandtime": "20260707134100",
+            "adultcharge": "32000"
+          },
+          {
+            "trainno": "01203",
+            "traingradename": "새마을호",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707123300",
+            "arrplandtime": "20260707160700",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "00417",
+            "traingradename": "KTX-산천(B-type)",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707124500",
+            "arrplandtime": "20260707140200",
+            "adultcharge": "32000"
+          },
+          {
+            "trainno": "00543",
+            "traingradename": "KTX-산천(B-type)",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707124500",
+            "arrplandtime": "20260707140200",
+            "adultcharge": "32000"
+          },
+          {
+            "trainno": "01279",
+            "traingradename": "무궁화호",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707125300",
+            "arrplandtime": "20260707164100",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "01425",
+            "traingradename": "ITX-새마을",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707132400",
+            "arrplandtime": "20260707162200",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "09419",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707133000",
+            "arrplandtime": "20260707144600",
+            "adultcharge": "32000"
+          },
+          {
+            "trainno": "00419",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707133000",
+            "arrplandtime": "20260707144600",
+            "adultcharge": "32000"
+          },
+          {
+            "trainno": "01205",
+            "traingradename": "새마을호",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707134300",
+            "arrplandtime": "20260707171500",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "00513",
+            "traingradename": "KTX",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707141000",
+            "arrplandtime": "20260707153200",
+            "adultcharge": "32000"
+          },
+          {
+            "trainno": "01281",
+            "traingradename": "무궁화호",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707142500",
+            "arrplandtime": "20260707182000",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "00583",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707143800",
+            "arrplandtime": "20260707164600",
+            "adultcharge": "30600"
+          },
+          {
+            "trainno": "00421",
+            "traingradename": "KTX",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707144800",
+            "arrplandtime": "20260707160900",
+            "adultcharge": "32000"
+          },
+          {
+            "trainno": "01575",
+            "traingradename": "무궁화호",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707150400",
+            "arrplandtime": "20260707181200",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "01427",
+            "traingradename": "ITX-새마을",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707151400",
+            "arrplandtime": "20260707181500",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "01207",
+            "traingradename": "새마을호",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707152800",
+            "arrplandtime": "20260707190800",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "00423",
+            "traingradename": "KTX",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707153300",
+            "arrplandtime": "20260707165500",
+            "adultcharge": "32000"
+          },
+          {
+            "trainno": "00425",
+            "traingradename": "KTX-청룡",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707160800",
+            "arrplandtime": "20260707171300",
+            "adultcharge": "32000"
+          },
+          {
+            "trainno": "01461",
+            "traingradename": "무궁화호",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707161500",
+            "arrplandtime": "20260707193500",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "01283",
+            "traingradename": "무궁화호",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707162500",
+            "arrplandtime": "20260707201700",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "01505",
+            "traingradename": "ITX-새마을",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707163800",
+            "arrplandtime": "20260707192900",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "00515",
+            "traingradename": "KTX-산천(B-type)",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707164300",
+            "arrplandtime": "20260707180600",
+            "adultcharge": "32000"
+          },
+          {
+            "trainno": "00427",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707164300",
+            "arrplandtime": "20260707180600",
+            "adultcharge": "32000"
+          },
+          {
+            "trainno": "00481",
+            "traingradename": "KTX",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707171000",
+            "arrplandtime": "20260707190800",
+            "adultcharge": "30600"
+          },
+          {
+            "trainno": "01507",
+            "traingradename": "ITX-마음",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707171800",
+            "arrplandtime": "20260707195900",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "01407",
+            "traingradename": "ITX-마음",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707171800",
+            "arrplandtime": "20260707195900",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "00517",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707174400",
+            "arrplandtime": "20260707190100",
+            "adultcharge": "32000"
+          },
+          {
+            "trainno": "00429",
+            "traingradename": "KTX-산천(B-type)",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707174400",
+            "arrplandtime": "20260707190100",
+            "adultcharge": "32000"
+          },
+          {
+            "trainno": "01209",
+            "traingradename": "새마을호",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707175200",
+            "arrplandtime": "20260707212700",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "01451",
+            "traingradename": "무궁화호",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707181000",
+            "arrplandtime": "20260707212600",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "01285",
+            "traingradename": "무궁화호",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707182100",
+            "arrplandtime": "20260707221400",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "00431",
+            "traingradename": "KTX",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707183100",
+            "arrplandtime": "20260707195200",
+            "adultcharge": "32000"
+          },
+          {
+            "trainno": "00519",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707184800",
+            "arrplandtime": "20260707201100",
+            "adultcharge": "32000"
+          },
+          {
+            "trainno": "01409",
+            "traingradename": "ITX-새마을",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707191100",
+            "arrplandtime": "20260707215900",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "01577",
+            "traingradename": "무궁화호",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707191500",
+            "arrplandtime": "20260707222500",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "00433",
+            "traingradename": "KTX",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707194100",
+            "arrplandtime": "20260707210300",
+            "adultcharge": "32000"
+          },
+          {
+            "trainno": "01429",
+            "traingradename": "ITX-새마을",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707200300",
+            "arrplandtime": "20260707225400",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "00521",
+            "traingradename": "KTX",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707200900",
+            "arrplandtime": "20260707213000",
+            "adultcharge": "32000"
+          },
+          {
+            "trainno": "00435",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707203300",
+            "arrplandtime": "20260707215400",
+            "adultcharge": "32000"
+          },
+          {
+            "trainno": "00541",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707203300",
+            "arrplandtime": "20260707215400",
+            "adultcharge": "32000"
+          },
+          {
+            "trainno": "01287",
+            "traingradename": "무궁화호",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707204300",
+            "arrplandtime": "20260708003000",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "00485",
+            "traingradename": "KTX-산천(B-type)",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707210900",
+            "arrplandtime": "20260707231300",
+            "adultcharge": "30600"
+          },
+          {
+            "trainno": "00437",
+            "traingradename": "KTX",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707211800",
+            "arrplandtime": "20260707223600",
+            "adultcharge": "32000"
+          },
+          {
+            "trainno": "01471",
+            "traingradename": "무궁화호",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707212200",
+            "arrplandtime": "20260708003800",
+            "adultcharge": "23700"
+          },
+          {
+            "trainno": "00523",
+            "traingradename": "KTX-산천(B-type)",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707214800",
+            "arrplandtime": "20260707225700",
+            "adultcharge": "32000"
+          },
+          {
+            "trainno": "00439",
+            "traingradename": "KTX",
+            "depplacename": "용산",
+            "arrplacename": "익산",
+            "depplandtime": "20260707222300",
+            "arrplandtime": "20260707234400",
+            "adultcharge": "32000"
+          }
+        ]
+      },
+      "numOfRows": 1000,
+      "pageNo": 1,
+      "totalCount": 80
+    }
+  }
+}

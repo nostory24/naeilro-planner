@@ -1,0 +1,161 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "trainno": "00201",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "서울",
+            "arrplacename": "마산",
+            "depplandtime": "20260707050300",
+            "arrplandtime": "20260707080700",
+            "adultcharge": "53300"
+          },
+          {
+            "trainno": "00203",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "서울",
+            "arrplacename": "마산",
+            "depplandtime": "20260707053800",
+            "arrplandtime": "20260707085000",
+            "adultcharge": "53300"
+          },
+          {
+            "trainno": "00205",
+            "traingradename": "KTX",
+            "depplacename": "서울",
+            "arrplacename": "마산",
+            "depplandtime": "20260707082300",
+            "arrplandtime": "20260707113000",
+            "adultcharge": "52900"
+          },
+          {
+            "trainno": "00207",
+            "traingradename": "KTX",
+            "depplacename": "서울",
+            "arrplacename": "마산",
+            "depplandtime": "20260707090400",
+            "arrplandtime": "20260707121400",
+            "adultcharge": "53300"
+          },
+          {
+            "trainno": "01111",
+            "traingradename": "ITX-새마을",
+            "depplacename": "서울",
+            "arrplacename": "마산",
+            "depplandtime": "20260707090800",
+            "arrplandtime": "20260707140400",
+            "adultcharge": "41100"
+          },
+          {
+            "trainno": "00209",
+            "traingradename": "KTX",
+            "depplacename": "서울",
+            "arrplacename": "마산",
+            "depplandtime": "20260707100700",
+            "arrplandtime": "20260707131700",
+            "adultcharge": "53300"
+          },
+          {
+            "trainno": "04021",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "서울",
+            "arrplacename": "마산",
+            "depplandtime": "20260707104300",
+            "arrplandtime": "20260707135000",
+            "adultcharge": "53300"
+          },
+          {
+            "trainno": "00211",
+            "traingradename": "KTX",
+            "depplacename": "서울",
+            "arrplacename": "마산",
+            "depplandtime": "20260707124800",
+            "arrplandtime": "20260707155300",
+            "adultcharge": "53300"
+          },
+          {
+            "trainno": "00225",
+            "traingradename": "KTX",
+            "depplacename": "서울",
+            "arrplacename": "마산",
+            "depplandtime": "20260707133800",
+            "arrplandtime": "20260707163900",
+            "adultcharge": "52900"
+          },
+          {
+            "trainno": "04023",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "서울",
+            "arrplacename": "마산",
+            "depplandtime": "20260707152300",
+            "arrplandtime": "20260707181900",
+            "adultcharge": "53300"
+          },
+          {
+            "trainno": "00215",
+            "traingradename": "KTX-산천(B-type)",
+            "depplacename": "서울",
+            "arrplacename": "마산",
+            "depplandtime": "20260707161800",
+            "arrplandtime": "20260707192500",
+            "adultcharge": "53300"
+          },
+          {
+            "trainno": "00217",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "서울",
+            "arrplacename": "마산",
+            "depplandtime": "20260707173300",
+            "arrplandtime": "20260707203800",
+            "adultcharge": "53300"
+          },
+          {
+            "trainno": "00219",
+            "traingradename": "KTX",
+            "depplacename": "서울",
+            "arrplacename": "마산",
+            "depplandtime": "20260707180300",
+            "arrplandtime": "20260707211100",
+            "adultcharge": "52900"
+          },
+          {
+            "trainno": "01113",
+            "traingradename": "ITX-새마을",
+            "depplacename": "서울",
+            "arrplacename": "마산",
+            "depplandtime": "20260707192500",
+            "arrplandtime": "20260708001300",
+            "adultcharge": "41100"
+          },
+          {
+            "trainno": "00221",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "서울",
+            "arrplacename": "마산",
+            "depplandtime": "20260707203800",
+            "arrplandtime": "20260707235000",
+            "adultcharge": "53300"
+          },
+          {
+            "trainno": "00223",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "서울",
+            "arrplacename": "마산",
+            "depplandtime": "20260707220800",
+            "arrplandtime": "20260708010800",
+            "adultcharge": "53300"
+          }
+        ]
+      },
+      "numOfRows": 1000,
+      "pageNo": 1,
+      "totalCount": 16
+    }
+  }
+}

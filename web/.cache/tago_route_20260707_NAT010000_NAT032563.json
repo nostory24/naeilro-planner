@@ -1,0 +1,80 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "trainno": "00405",
+            "traingradename": "KTX",
+            "depplacename": "서울",
+            "arrplacename": "목포",
+            "depplandtime": "20260707062200",
+            "arrplandtime": "20260707090600",
+            "adultcharge": "53100"
+          },
+          {
+            "trainno": "00407",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "서울",
+            "arrplacename": "목포",
+            "depplandtime": "20260707073900",
+            "arrplandtime": "20260707102000",
+            "adultcharge": "53100"
+          },
+          {
+            "trainno": "00413",
+            "traingradename": "KTX",
+            "depplacename": "서울",
+            "arrplacename": "목포",
+            "depplandtime": "20260707103200",
+            "arrplandtime": "20260707131100",
+            "adultcharge": "53100"
+          },
+          {
+            "trainno": "00415",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "서울",
+            "arrplacename": "목포",
+            "depplandtime": "20260707120800",
+            "arrplandtime": "20260707145000",
+            "adultcharge": "53100"
+          },
+          {
+            "trainno": "00427",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "서울",
+            "arrplacename": "목포",
+            "depplandtime": "20260707163500",
+            "arrplandtime": "20260707192100",
+            "adultcharge": "53100"
+          },
+          {
+            "trainno": "00429",
+            "traingradename": "KTX-산천(B-type)",
+            "depplacename": "서울",
+            "arrplacename": "목포",
+            "depplandtime": "20260707173700",
+            "arrplandtime": "20260707201000",
+            "adultcharge": "53100"
+          },
+          {
+            "trainno": "00433",
+            "traingradename": "KTX",
+            "depplacename": "서울",
+            "arrplacename": "목포",
+            "depplandtime": "20260707192900",
+            "arrplandtime": "20260707221900",
+            "adultcharge": "53100"
+          }
+        ]
+      },
+      "numOfRows": 1000,
+      "pageNo": 1,
+      "totalCount": 7
+    }
+  }
+}

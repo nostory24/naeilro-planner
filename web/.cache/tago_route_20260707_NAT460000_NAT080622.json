@@ -1,0 +1,53 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "trainno": "01231",
+            "traingradename": "ITX-마음",
+            "depplacename": "서화성",
+            "arrplacename": "홍성",
+            "depplandtime": "20260707082300",
+            "arrplandtime": "20260707093000",
+            "adultcharge": "8500"
+          },
+          {
+            "trainno": "01233",
+            "traingradename": "ITX-마음",
+            "depplacename": "서화성",
+            "arrplacename": "홍성",
+            "depplandtime": "20260707121100",
+            "arrplandtime": "20260707131800",
+            "adultcharge": "8500"
+          },
+          {
+            "trainno": "01235",
+            "traingradename": "ITX-마음",
+            "depplacename": "서화성",
+            "arrplacename": "홍성",
+            "depplandtime": "20260707154700",
+            "arrplandtime": "20260707165400",
+            "adultcharge": "8500"
+          },
+          {
+            "trainno": "01237",
+            "traingradename": "ITX-마음",
+            "depplacename": "서화성",
+            "arrplacename": "홍성",
+            "depplandtime": "20260707192500",
+            "arrplandtime": "20260707203200",
+            "adultcharge": "8500"
+          }
+        ]
+      },
+      "numOfRows": 1000,
+      "pageNo": 1,
+      "totalCount": 4
+    }
+  }
+}

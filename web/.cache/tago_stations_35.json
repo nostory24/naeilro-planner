@@ -1,0 +1,81 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "nodeid": "NAT030718",
+            "nodename": "함열"
+          },
+          {
+            "nodeid": "NAT030879",
+            "nodename": "익산"
+          },
+          {
+            "nodeid": "NAT031056",
+            "nodename": "김제"
+          },
+          {
+            "nodeid": "NAT031179",
+            "nodename": "신태인"
+          },
+          {
+            "nodeid": "NAT031314",
+            "nodename": "정읍"
+          },
+          {
+            "nodeid": "NAT040133",
+            "nodename": "삼례"
+          },
+          {
+            "nodeid": "NAT040257",
+            "nodename": "전주"
+          },
+          {
+            "nodeid": "NAT040536",
+            "nodename": "임실"
+          },
+          {
+            "nodeid": "NAT040667",
+            "nodename": "오수"
+          },
+          {
+            "nodeid": "NAT040868",
+            "nodename": "남원"
+          },
+          {
+            "nodeid": "NAT030667",
+            "nodename": "용동"
+          },
+          {
+            "nodeid": "NAT040173",
+            "nodename": "동산"
+          },
+          {
+            "nodeid": "NAT040352",
+            "nodename": "신리"
+          },
+          {
+            "nodeid": "NAT040496",
+            "nodename": "관촌"
+          },
+          {
+            "nodeid": "NAT081388",
+            "nodename": "군산"
+          },
+          {
+            "nodeid": "NAT320131",
+            "nodename": "대야"
+          }
+        ]
+      },
+      "numOfRows": 1000,
+      "pageNo": 1,
+      "totalCount": 16
+    }
+  }
+}

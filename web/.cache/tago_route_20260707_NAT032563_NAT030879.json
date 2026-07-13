@@ -1,0 +1,341 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "trainno": "00404",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707052300",
+            "arrplandtime": "20260707063800",
+            "adultcharge": "21100"
+          },
+          {
+            "trainno": "00472",
+            "traingradename": "KTX",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707053200",
+            "arrplandtime": "20260707071000",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "00652",
+            "traingradename": "SRT",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707062100",
+            "arrplandtime": "20260707073400",
+            "adultcharge": "19100"
+          },
+          {
+            "trainno": "00406",
+            "traingradename": "KTX",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707070300",
+            "arrplandtime": "20260707081600",
+            "adultcharge": "21100"
+          },
+          {
+            "trainno": "01452",
+            "traingradename": "무궁화호",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707071100",
+            "arrplandtime": "20260707090800",
+            "adultcharge": "15900"
+          },
+          {
+            "trainno": "00654",
+            "traingradename": "SRT",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707075600",
+            "arrplandtime": "20260707090900",
+            "adultcharge": "19100"
+          },
+          {
+            "trainno": "00408",
+            "traingradename": "KTX-산천(B-type)",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707081000",
+            "arrplandtime": "20260707092500",
+            "adultcharge": "21100"
+          },
+          {
+            "trainno": "00410",
+            "traingradename": "KTX-산천(B-type)",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707090600",
+            "arrplandtime": "20260707101500",
+            "adultcharge": "21100"
+          },
+          {
+            "trainno": "00412",
+            "traingradename": "KTX",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707094800",
+            "arrplandtime": "20260707110200",
+            "adultcharge": "21100"
+          },
+          {
+            "trainno": "00656",
+            "traingradename": "SRT",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707100500",
+            "arrplandtime": "20260707111800",
+            "adultcharge": "19100"
+          },
+          {
+            "trainno": "01402",
+            "traingradename": "ITX-새마을",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707102200",
+            "arrplandtime": "20260707121000",
+            "adultcharge": "15900"
+          },
+          {
+            "trainno": "00414",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707104300",
+            "arrplandtime": "20260707115100",
+            "adultcharge": "21100"
+          },
+          {
+            "trainno": "01404",
+            "traingradename": "ITX-마음",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707110600",
+            "arrplandtime": "20260707124900",
+            "adultcharge": "15900"
+          },
+          {
+            "trainno": "01312",
+            "traingradename": "ITX-마음",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707122800",
+            "arrplandtime": "20260707143900",
+            "adultcharge": "15900"
+          },
+          {
+            "trainno": "00418",
+            "traingradename": "KTX",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707124400",
+            "arrplandtime": "20260707135700",
+            "adultcharge": "21100"
+          },
+          {
+            "trainno": "00658",
+            "traingradename": "SRT",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707130500",
+            "arrplandtime": "20260707141800",
+            "adultcharge": "19100"
+          },
+          {
+            "trainno": "00420",
+            "traingradename": "KTX",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707134300",
+            "arrplandtime": "20260707145800",
+            "adultcharge": "21100"
+          },
+          {
+            "trainno": "00660",
+            "traingradename": "SRT",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707140000",
+            "arrplandtime": "20260707151300",
+            "adultcharge": "19100"
+          },
+          {
+            "trainno": "00422",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707141900",
+            "arrplandtime": "20260707153400",
+            "adultcharge": "21100"
+          },
+          {
+            "trainno": "04042",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707151900",
+            "arrplandtime": "20260707162600",
+            "adultcharge": "21100"
+          },
+          {
+            "trainno": "00424",
+            "traingradename": "KTX-산천(B-type)",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707155000",
+            "arrplandtime": "20260707170500",
+            "adultcharge": "21100"
+          },
+          {
+            "trainno": "01406",
+            "traingradename": "ITX-마음",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707155700",
+            "arrplandtime": "20260707173400",
+            "adultcharge": "15900"
+          },
+          {
+            "trainno": "01408",
+            "traingradename": "ITX-새마을",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707161000",
+            "arrplandtime": "20260707181900",
+            "adultcharge": "15900"
+          },
+          {
+            "trainno": "00482",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707162500",
+            "arrplandtime": "20260707180000",
+            "adultcharge": "17100"
+          },
+          {
+            "trainno": "00662",
+            "traingradename": "SRT",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707164100",
+            "arrplandtime": "20260707175500",
+            "adultcharge": "19100"
+          },
+          {
+            "trainno": "00426",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707165400",
+            "arrplandtime": "20260707180900",
+            "adultcharge": "21100"
+          },
+          {
+            "trainno": "01410",
+            "traingradename": "ITX-새마을",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707173800",
+            "arrplandtime": "20260707192300",
+            "adultcharge": "15900"
+          },
+          {
+            "trainno": "00430",
+            "traingradename": "KTX",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707180300",
+            "arrplandtime": "20260707191700",
+            "adultcharge": "21100"
+          },
+          {
+            "trainno": "01314",
+            "traingradename": "ITX-마음",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707183000",
+            "arrplandtime": "20260707204300",
+            "adultcharge": "15900"
+          },
+          {
+            "trainno": "00432",
+            "traingradename": "KTX",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707184800",
+            "arrplandtime": "20260707200100",
+            "adultcharge": "21100"
+          },
+          {
+            "trainno": "00664",
+            "traingradename": "SRT",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707190100",
+            "arrplandtime": "20260707201500",
+            "adultcharge": "19100"
+          },
+          {
+            "trainno": "00434",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707195500",
+            "arrplandtime": "20260707205900",
+            "adultcharge": "21100"
+          },
+          {
+            "trainno": "00666",
+            "traingradename": "SRT",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707202200",
+            "arrplandtime": "20260707213500",
+            "adultcharge": "19100"
+          },
+          {
+            "trainno": "00438",
+            "traingradename": "KTX-산천(B-type)",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707204200",
+            "arrplandtime": "20260707215700",
+            "adultcharge": "21100"
+          },
+          {
+            "trainno": "00440",
+            "traingradename": "KTX",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707215200",
+            "arrplandtime": "20260707225900",
+            "adultcharge": "21100"
+          },
+          {
+            "trainno": "00668",
+            "traingradename": "SRT",
+            "depplacename": "목포",
+            "arrplacename": "익산",
+            "depplandtime": "20260707222500",
+            "arrplandtime": "20260707233800",
+            "adultcharge": "19100"
+          }
+        ]
+      },
+      "numOfRows": 1000,
+      "pageNo": 1,
+      "totalCount": 36
+    }
+  }
+}

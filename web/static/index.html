@@ -22,7 +22,7 @@
     .status{color:var(--muted);margin:16px 2px 10px;font-size:14px}.card{background:rgba(15,23,42,.92);border:1px solid var(--line);border-radius:16px;padding:14px;margin:10px 0}.top{display:flex;justify-content:space-between;gap:10px;align-items:baseline}.station{font-size:20px;font-weight:900}.mins{font-size:18px;color:var(--good);font-weight:900;white-space:nowrap}.meta{color:var(--muted);font-size:13px;margin-top:4px}.path{margin-top:10px;color:#dbeafe;font-size:14px;line-height:1.45}details{margin-top:8px}summary{color:var(--accent);font-size:13px;cursor:pointer}.legs{white-space:pre-wrap;color:#cbd5e1;font-size:12px;line-height:1.5;margin-top:8px}.err{color:#fecaca;background:rgba(239,68,68,.14);border:1px solid rgba(239,68,68,.35);padding:12px;border-radius:12px}.mutedSmall{font-size:12px;color:var(--muted);margin-top:5px}
     .randomBox{margin:14px 0;padding:16px;border-radius:18px;border:1px solid rgba(250,204,21,.28);background:linear-gradient(135deg,rgba(244,114,182,.16),rgba(56,189,248,.10));box-shadow:0 18px 60px rgba(0,0,0,.28)}.randomTitle{font-weight:900;font-size:17px;margin-bottom:8px}.rouletteName{text-align:center;font-size:42px;font-weight:1000;letter-spacing:-.05em;padding:24px 8px;color:#fff7ed;text-shadow:0 0 24px rgba(250,204,21,.35);min-height:96px;display:flex;align-items:center;justify-content:center}.countdown{text-align:center;color:var(--yellow);font-size:18px;font-weight:900;margin-top:4px}.winner{border-color:rgba(34,197,94,.45);background:linear-gradient(135deg,rgba(34,197,94,.18),rgba(56,189,248,.10))}.winner .rouletteName{color:#bbf7d0}.confirmRow{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.selectTools{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.selectTools button{margin-top:0;padding:11px 12px;font-size:14px}
     .checkRow{display:grid;grid-template-columns:32px 1fr auto;gap:10px;align-items:center}.checkRow input[type="checkbox"]{width:22px;height:22px;accent-color:#38bdf8}.stationName{font-size:18px;font-weight:900}.selectedHint{color:#fde68a;font-weight:800}.regionBadge{color:#a7f3d0;font-size:12px;margin-left:4px}
-    .regionExclude{margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.10)}.regionTitle{font-size:13px;color:#fde68a;font-weight:900;margin-bottom:8px}.regionGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}@media(max-width:520px){.regionGrid{grid-template-columns:repeat(3,1fr)}}
+    .filterGroup{margin-top:12px;border-top:1px solid rgba(255,255,255,.10);padding-top:10px}.filterToggle{display:flex;align-items:center;justify-content:space-between;width:100%;margin:0;background:#1f2937;color:var(--text);border:1px solid var(--line);padding:11px 12px;border-radius:12px;font-size:14px}.filterToggle .arrow{transition:transform .2s ease}.filterToggle.open .arrow{transform:rotate(180deg)}.filterBody{display:none;padding-top:10px}.filterBody.open{display:block}.trainExclude{margin-top:0;padding-top:0;border-top:0}.trainOption{display:flex;align-items:center;gap:8px;background:rgba(2,6,23,.62);border:1px solid var(--line);border-radius:12px;padding:11px 12px;font-size:14px}.trainOption input{width:18px;height:18px;accent-color:#facc15}.regionExclude{margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.10)}.regionTitle{font-size:13px;color:#fde68a;font-weight:900;margin-bottom:8px}.regionGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}@media(max-width:520px){.regionGrid{grid-template-columns:repeat(3,1fr)}}
     .regionChip{display:flex;align-items:center;gap:6px;background:rgba(2,6,23,.62);border:1px solid var(--line);border-radius:999px;padding:8px 9px;font-size:13px;color:#e5e7eb}.regionChip input{width:16px;height:16px;accent-color:#f472b6}.excludedCard{opacity:.48}.excludedNote{color:#fca5a5;font-size:12px;margin-top:3px}
   </style>
 </head>
@@ -41,7 +41,7 @@
 </div>
 <script>
 const stationInput=document.getElementById("stationInput"),suggestBox=document.getElementById("suggestBox"),minutesEl=document.getElementById("minutes"),transferEl=document.getElementById("transfer"),statusEl=document.getElementById("status"),resultsEl=document.getElementById("results"),randomArea=document.getElementById("randomArea"),btn=document.getElementById("btn");
-let allStations=[],currentResults=[],selectedKeys=new Set(),excludedRegions=new Set(),rouletteTimer=null,countdownTimer=null;
+let allStations=[],currentResults=[],selectedKeys=new Set(),excludedRegions=new Set(),excludeKtx=false,rouletteTimer=null,countdownTimer=null;
 const REGION_MAP={
 "서울":["서울","용산","영등포","청량리","왕십리","옥수","상봉","수서"],
 "경기":["수원","평택","안양","광명","행신","부천","의정부","덕소","양평","용문","가평","청평","퇴계원","사릉","금곡","마석","천마산","평내호평","오산","서정리","지제","이천","부발","여주","곤지암","양동","지평","신원","국수","아신","오빈","팔당","도심","양수","운길산","동두천","소요산","초성리","전곡","연천"],
@@ -88,10 +88,27 @@ function keyOf(r){return `${r.to_station}|${r.duration_minutes}|${r.transfer_cou
 async function loadStations(){try{const res=await fetch("/api/stations");const data=await res.json();if(data.error)throw new Error(data.error);allStations=data.stations||[];stationInput.value="";statusEl.textContent=`역 ${allStations.length}개 로드됨`;}catch(e){statusEl.innerHTML=`<div class="err">${esc(e.message)}</div>`;}}
 function showSuggestions(){const q=stationInput.value.trim();if(!q){suggestBox.style.display="none";suggestBox.innerHTML="";return;}const m=allStations.filter(s=>s.includes(q)).slice(0,80);suggestBox.innerHTML=m.length?m.map(s=>`<div class="suggestItem" onclick="pickStation('${esc(s)}')">${esc(s)}</div>`).join(""):`<div class="suggestItem">후보 없음</div>`;suggestBox.style.display="block";} function pickStation(s){stationInput.value=s;suggestBox.style.display="none";}
 document.addEventListener("click",e=>{if(!e.target.closest(".inputWrap"))suggestBox.style.display="none";});stationInput.addEventListener("input",showSuggestions);stationInput.addEventListener("focus",showSuggestions);
-function selectedResults(){return currentResults.filter(r=>selectedKeys.has(keyOf(r))&&!isExcluded(r));}
-function syncExcludedSelection(){currentResults.forEach(r=>{if(isExcluded(r))selectedKeys.delete(keyOf(r));});}
+function trainExcluded(r){return excludeKtx && Number(r.uses_ktx||0)===1;}
+function selectedResults(){return currentResults.filter(r=>selectedKeys.has(keyOf(r))&&!isExcluded(r)&&!trainExcluded(r));}
+function syncExcludedSelection(){
+  currentResults.forEach(r=>{
+    if(isExcluded(r) || trainExcluded(r)) selectedKeys.delete(keyOf(r));
+  });
+}
 function updateSelectedStatus(){syncExcludedSelection();const c=selectedResults().length,t=currentResults.length,h=document.getElementById("selectedHint");const ex=[...excludedRegions].join(", ");if(h)h.textContent=`랜덤 후보 ${c}/${t}개 선택됨${ex?` · 제외: ${ex}`:""}`;const d=document.getElementById("drawBtn");if(d)d.disabled=c<1;}
 function toggleOne(k,c){if(c)selectedKeys.add(k);else selectedKeys.delete(k);updateSelectedStatus();}
+function toggleKtx(c){
+  excludeKtx=c;
+  if(excludeKtx){
+    syncExcludedSelection();
+  }else{
+    currentResults.forEach(item=>{
+      if(!isExcluded(item)) selectedKeys.add(keyOf(item));
+    });
+  }
+  renderResultsList();
+  renderRandomPrompt();
+}
 function toggleRegion(r,c){
   if(c){
     excludedRegions.add(r);
@@ -106,12 +123,44 @@ function toggleRegion(r,c){
 }
 function selectAll(){currentResults.forEach(r=>{if(!isExcluded(r))selectedKeys.add(keyOf(r));});renderResultsList();renderRandomPrompt();}
 function deselectAll(){selectedKeys.clear();renderResultsList();renderRandomPrompt();}
-function renderRegionExclude(){return `<div class="regionExclude"><div class="regionTitle">랜덤 제외 지역</div><div class="regionGrid">${REGION_ORDER.map(r=>`<label class="regionChip"><input type="checkbox" ${excludedRegions.has(r)?"checked":""} onchange="toggleRegion('${r}',this.checked)" />${r}</label>`).join("")}</div><div class="mutedSmall">예: 서울을 체크하면 서울 지역 역은 랜덤 후보에서 제외되고, 다시 체크 해제하면 후보로 돌아옵니다.</div></div>`;}
-function renderRandomPrompt(){if(!currentResults.length){randomArea.innerHTML="";return;}syncExcludedSelection();const c=selectedResults().length;randomArea.innerHTML=`<div class="randomBox"><div class="randomTitle">🎲 랜덤으로 여행지를 뽑을까요?</div><div class="meta">체크된 역 중, 제외 지역이 아닌 역만 룰렛 후보에 들어갑니다. <span class="selectedHint" id="selectedHint">랜덤 후보 ${c}/${currentResults.length}개 선택됨</span></div>${renderRegionExclude()}<div class="selectTools"><button class="secondary" onclick="selectAll()">전체 선택</button><button class="secondary" onclick="deselectAll()">전체 해제</button></div><div class="confirmRow"><button class="rouletteBtn" id="drawBtn" onclick="startRoulette()" ${c<1?"disabled":""}>Y · 뽑기</button><button class="secondary" onclick="cancelRoulette()">N · 안 뽑기</button></div></div>`;updateSelectedStatus();}
+function toggleFilterBody(id, button){
+  const body=document.getElementById(id);
+  if(!body)return;
+  const open=!body.classList.contains("open");
+  body.classList.toggle("open",open);
+  button.classList.toggle("open",open);
+}
+function renderTrainExclude(){
+  return `<div class="filterGroup">
+    <button class="filterToggle" onclick="toggleFilterBody('trainFilterBody',this)">
+      <span>🚄 열차 제외 옵션</span><span class="arrow">⌄</span>
+    </button>
+    <div id="trainFilterBody" class="filterBody">
+      <div class="trainExclude"><div class="regionTitle">랜덤 제외 열차</div>
+      <label class="trainOption"><input type="checkbox" ${excludeKtx?"checked":""} onchange="toggleKtx(this.checked)" />
+      KTX가 포함된 경로 제외</label>
+      <div class="mutedSmall">체크 해제하면 KTX 경로가 다시 랜덤 후보로 돌아옵니다.</div></div>
+    </div>
+  </div>`;
+}
+function renderRegionExclude(){return `<div class="filterGroup">
+  <button class="filterToggle" onclick="toggleFilterBody('regionFilterBody',this)">
+    <span>🗺️ 지역 제외 옵션</span><span class="arrow">⌄</span>
+  </button>
+  <div id="regionFilterBody" class="filterBody"><div class="regionExclude"><div class="regionExclude"><div class="regionTitle">랜덤 제외 지역</div><div class="regionGrid">${REGION_ORDER.map(r=>`<label class="regionChip"><input type="checkbox" ${excludedRegions.has(r)?"checked":""} onchange="toggleRegion('${r}',this.checked)" />${r}</label>`).join("")}</div><div class="mutedSmall">예: 서울을 체크하면 서울 지역 역은 랜덤 후보에서 제외되고, 다시 체크 해제하면 후보로 돌아옵니다.</div></div></div></div>`;}
+function renderRandomPrompt(){if(!currentResults.length){randomArea.innerHTML="";return;}syncExcludedSelection();const c=selectedResults().length;randomArea.innerHTML=`<div class="randomBox"><div class="randomTitle">🎲 랜덤으로 여행지를 뽑을까요?</div><div class="meta">체크된 역 중, 제외 지역이 아닌 역만 룰렛 후보에 들어갑니다. <span class="selectedHint" id="selectedHint">랜덤 후보 ${c}/${currentResults.length}개 선택됨</span></div>${renderRegionExclude()}${renderTrainExclude()}<div class="selectTools"><button class="secondary" onclick="selectAll()">전체 선택</button><button class="secondary" onclick="deselectAll()">전체 해제</button></div><div class="confirmRow"><button class="rouletteBtn" id="drawBtn" onclick="startRoulette()" ${c<1?"disabled":""}>Y · 뽑기</button><button class="secondary" onclick="cancelRoulette()">N · 안 뽑기</button></div></div>`;updateSelectedStatus();}
 function cancelRoulette(){stopTimers();randomArea.innerHTML="";}function stopTimers(){if(rouletteTimer){clearInterval(rouletteTimer);rouletteTimer=null;}if(countdownTimer){clearInterval(countdownTimer);countdownTimer=null;}} function randomItem(a){return a[Math.floor(Math.random()*a.length)];}
-function startRoulette(){const c=selectedResults();if(!c.length){alert("랜덤 후보를 최소 1개 이상 체크하세요.");return;}stopTimers();randomArea.innerHTML=`<div class="randomBox"><div class="randomTitle">🎲 여행지 추첨중...</div><div class="rouletteName" id="rouletteName">준비</div><div class="countdown" id="countdown">5</div></div>`;const n=document.getElementById("rouletteName"),co=document.getElementById("countdown");let r=5;rouletteTimer=setInterval(()=>{n.textContent=randomItem(c).to_station;},70);countdownTimer=setInterval(()=>{r-=1;co.textContent=r;if(r<=0)finishRoulette(c);},1000);}
-function finishRoulette(c){stopTimers();const w=randomItem(c);randomArea.innerHTML=`<div class="randomBox winner"><div class="randomTitle">🎉 오늘의 여행지는</div><div class="rouletteName">${esc(w.to_station)}</div><div class="card"><div class="top"><div class="station">${esc(w.to_station)}</div><div class="mins">${esc(w.duration_minutes)}분</div></div><div class="meta">지역 ${esc(regionOf(w.to_station))} · 환승 ${esc(w.transfer_count)}회 · 탑승 ${esc(w.ride_count)}회</div><div class="path">${esc(w.path)}</div>${w.legs?`<details open><summary>상세 경로</summary><div class="legs">${esc(w.legs)}</div></details>`:""}</div><button class="rouletteBtn" onclick="startRoulette()">다시 뽑기</button></div>`;}
-function renderResultsList(){if(!currentResults.length){resultsEl.innerHTML=`<div class="card">조건에 맞는 역이 없습니다.</div>`;return;}resultsEl.innerHTML=currentResults.map(r=>{const k=keyOf(r),ex=isExcluded(r),ch=selectedKeys.has(k)&&!ex?"checked":"",reg=regionOf(r.to_station);return `<div class="card ${ex?"excludedCard":""}"><div class="checkRow"><input type="checkbox" ${ch} ${ex?"disabled":""} onchange="toggleOne('${esc(k)}',this.checked)" /><div><div class="stationName">${esc(r.to_station)} <span class="regionBadge">${esc(reg)}</span></div><div class="meta">환승 ${esc(r.transfer_count)}회 · 탑승 ${esc(r.ride_count)}회</div>${ex?`<div class="excludedNote">랜덤 제외 지역</div>`:""}</div><div class="mins">${esc(r.duration_minutes)}분</div></div><div class="path">${esc(r.path)}</div>${r.legs?`<details><summary>상세 경로</summary><div class="legs">${esc(r.legs)}</div></details>`:""}</div>`;}).join("");}
+function scrollRouletteIntoView(){
+  requestAnimationFrame(()=>{
+    const box=randomArea.querySelector(".randomBox");
+    if(box){
+      box.scrollIntoView({behavior:"smooth",block:"center"});
+    }
+  });
+}
+function startRoulette(){const c=selectedResults();if(!c.length){alert("랜덤 후보를 최소 1개 이상 체크하세요.");return;}stopTimers();randomArea.innerHTML=`<div class="randomBox"><div class="randomTitle">🎲 여행지 추첨중...</div><div class="rouletteName" id="rouletteName">준비</div><div class="countdown" id="countdown">5</div></div>`;scrollRouletteIntoView();const n=document.getElementById("rouletteName"),co=document.getElementById("countdown");let r=5;rouletteTimer=setInterval(()=>{n.textContent=randomItem(c).to_station;},70);countdownTimer=setInterval(()=>{r-=1;co.textContent=r;if(r<=0)finishRoulette(c);},1000);}
+function finishRoulette(c){stopTimers();const w=randomItem(c);randomArea.innerHTML=`<div class="randomBox winner"><div class="randomTitle">🎉 오늘의 여행지는</div><div class="rouletteName">${esc(w.to_station)}</div><div class="card"><div class="top"><div class="station">${esc(w.to_station)}</div><div class="mins">${esc(w.duration_minutes)}분</div></div><div class="meta">지역 ${esc(regionOf(w.to_station))} · 열차 ${esc(w.used_train_types||"미확인")} · 환승 ${esc(w.transfer_count)}회 · 탑승 ${esc(w.ride_count)}회</div><div class="path">${esc(w.path)}</div>${w.legs?`<details open><summary>상세 경로</summary><div class="legs">${esc(w.legs)}</div></details>`:""}</div><button class="rouletteBtn" onclick="startRoulette()">다시 뽑기</button></div>`;scrollRouletteIntoView();}
+function renderResultsList(){if(!currentResults.length){resultsEl.innerHTML=`<div class="card">조건에 맞는 역이 없습니다.</div>`;return;}resultsEl.innerHTML=currentResults.map(r=>{const k=keyOf(r),ex=isExcluded(r)||trainExcluded(r),ch=selectedKeys.has(k)&&!ex?"checked":"",reg=regionOf(r.to_station);return `<div class="card ${ex?"excludedCard":""}"><div class="checkRow"><input type="checkbox" ${ch} ${ex?"disabled":""} onchange="toggleOne('${esc(k)}',this.checked)" /><div><div class="stationName">${esc(r.to_station)} <span class="regionBadge">${esc(reg)}</span></div><div class="meta">환승 ${esc(r.transfer_count)}회 · 탑승 ${esc(r.ride_count)}회</div>${ex?`<div class="excludedNote">${trainExcluded(r)?"KTX 경로 랜덤 제외":"랜덤 제외 지역"}</div>`:""}</div><div class="mins">${esc(r.duration_minutes)}분</div></div><div class="path">${esc(r.path)}</div>${r.legs?`<details><summary>상세 경로</summary><div class="legs">${esc(r.legs)}</div></details>`:""}</div>`;}).join("");}
 function render(data){currentResults=data.results||[];selectedKeys=new Set(currentResults.map(keyOf));statusEl.textContent=`${data.from_station}에서 ${data.minutes}분 이내: ${currentResults.length}개 역`;renderRandomPrompt();renderResultsList();}
 async function search(){stopTimers();randomArea.innerHTML="";const from=stationInput.value.trim();if(!from){statusEl.innerHTML=`<div class="err">출발역을 입력하세요.</div>`;return;}if(allStations.length&&!allStations.includes(from)){const m=allStations.filter(s=>s.includes(from)).slice(0,5);statusEl.innerHTML=`<div class="err">역 목록에 없는 출발역입니다.${esc(m.length?` 혹시 ${m.join(", ")} 중 하나인가요?`:"")}</div>`;return;}const params=new URLSearchParams({from_station:from,minutes:minutesEl.value||"180",max_transfer:transferEl.value||"2"});statusEl.textContent="검색 중...";resultsEl.innerHTML="";try{const res=await fetch(`/api/search?${params.toString()}`);const data=await res.json();if(data.error)throw new Error(data.error);render(data);}catch(e){statusEl.innerHTML=`<div class="err">${esc(e.message)}</div>`;}}
 btn.addEventListener("click",search);stationInput.addEventListener("keydown",e=>{if(e.key==="Enter")search();});if("serviceWorker" in navigator){navigator.serviceWorker.register("/sw.js").catch(()=>{});}loadStations();

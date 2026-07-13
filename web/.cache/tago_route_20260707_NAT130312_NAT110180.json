@@ -1,0 +1,98 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "trainno": "02602",
+            "traingradename": "무궁화호",
+            "depplacename": "의정부",
+            "arrplacename": "대곡",
+            "depplandtime": "20260707065500",
+            "arrplandtime": "20260707074900",
+            "adultcharge": "2600"
+          },
+          {
+            "trainno": "02604",
+            "traingradename": "무궁화호",
+            "depplacename": "의정부",
+            "arrplacename": "대곡",
+            "depplandtime": "20260707082200",
+            "arrplandtime": "20260707091600",
+            "adultcharge": "2600"
+          },
+          {
+            "trainno": "02606",
+            "traingradename": "무궁화호",
+            "depplacename": "의정부",
+            "arrplacename": "대곡",
+            "depplandtime": "20260707094900",
+            "arrplandtime": "20260707104300",
+            "adultcharge": "2600"
+          },
+          {
+            "trainno": "02608",
+            "traingradename": "무궁화호",
+            "depplacename": "의정부",
+            "arrplacename": "대곡",
+            "depplandtime": "20260707111600",
+            "arrplandtime": "20260707121000",
+            "adultcharge": "2600"
+          },
+          {
+            "trainno": "02610",
+            "traingradename": "무궁화호",
+            "depplacename": "의정부",
+            "arrplacename": "대곡",
+            "depplandtime": "20260707124300",
+            "arrplandtime": "20260707133700",
+            "adultcharge": "2600"
+          },
+          {
+            "trainno": "02612",
+            "traingradename": "무궁화호",
+            "depplacename": "의정부",
+            "arrplacename": "대곡",
+            "depplandtime": "20260707141000",
+            "arrplandtime": "20260707150400",
+            "adultcharge": "2600"
+          },
+          {
+            "trainno": "02616",
+            "traingradename": "무궁화호",
+            "depplacename": "의정부",
+            "arrplacename": "대곡",
+            "depplandtime": "20260707182000",
+            "arrplandtime": "20260707191400",
+            "adultcharge": "2600"
+          },
+          {
+            "trainno": "02618",
+            "traingradename": "무궁화호",
+            "depplacename": "의정부",
+            "arrplacename": "대곡",
+            "depplandtime": "20260707194600",
+            "arrplandtime": "20260707204000",
+            "adultcharge": "2600"
+          },
+          {
+            "trainno": "02620",
+            "traingradename": "무궁화호",
+            "depplacename": "의정부",
+            "arrplacename": "대곡",
+            "depplandtime": "20260707211200",
+            "arrplandtime": "20260707220600",
+            "adultcharge": "2600"
+          }
+        ]
+      },
+      "numOfRows": 1000,
+      "pageNo": 1,
+      "totalCount": 9
+    }
+  }
+}

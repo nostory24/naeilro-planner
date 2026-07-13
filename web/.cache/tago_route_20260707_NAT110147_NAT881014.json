@@ -1,0 +1,35 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "trainno": "04021",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "행신",
+            "arrplacename": "진주",
+            "depplandtime": "20260707102100",
+            "arrplandtime": "20260707141600",
+            "adultcharge": "58900"
+          },
+          {
+            "trainno": "00225",
+            "traingradename": "KTX",
+            "depplacename": "행신",
+            "arrplacename": "진주",
+            "depplandtime": "20260707131500",
+            "arrplandtime": "20260707170500",
+            "adultcharge": "58500"
+          }
+        ]
+      },
+      "numOfRows": 1000,
+      "pageNo": 1,
+      "totalCount": 2
+    }
+  }
+}

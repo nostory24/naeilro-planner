@@ -1,0 +1,33 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "nodeid": "NAT011154",
+            "nodename": "전의"
+          },
+          {
+            "nodeid": "NAT011298",
+            "nodename": "조치원"
+          },
+          {
+            "nodeid": "NAT011403",
+            "nodename": "부강"
+          },
+          {
+            "nodeid": "NAT011079",
+            "nodename": "소정리"
+          }
+        ]
+      },
+      "numOfRows": 1000,
+      "pageNo": 1,
+      "totalCount": 4
+    }
+  }
+}

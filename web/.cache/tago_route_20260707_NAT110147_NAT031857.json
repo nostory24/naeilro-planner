@@ -1,0 +1,62 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "trainno": "00405",
+            "traingradename": "KTX",
+            "depplacename": "행신",
+            "arrplacename": "광주송정",
+            "depplandtime": "20260707060000",
+            "arrplandtime": "20260707082800",
+            "adultcharge": "48400"
+          },
+          {
+            "trainno": "00407",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "행신",
+            "arrplacename": "광주송정",
+            "depplandtime": "20260707071800",
+            "arrplandtime": "20260707094200",
+            "adultcharge": "48400"
+          },
+          {
+            "trainno": "00415",
+            "traingradename": "KTX-산천(A-type)",
+            "depplacename": "행신",
+            "arrplacename": "광주송정",
+            "depplandtime": "20260707114700",
+            "arrplandtime": "20260707141200",
+            "adultcharge": "48400"
+          },
+          {
+            "trainno": "00417",
+            "traingradename": "KTX-산천(B-type)",
+            "depplacename": "행신",
+            "arrplacename": "광주송정",
+            "depplandtime": "20260707121700",
+            "arrplandtime": "20260707143900",
+            "adultcharge": "48400"
+          },
+          {
+            "trainno": "00439",
+            "traingradename": "KTX",
+            "depplacename": "행신",
+            "arrplacename": "광주송정",
+            "depplandtime": "20260707215700",
+            "arrplandtime": "20260708002100",
+            "adultcharge": "48400"
+          }
+        ]
+      },
+      "numOfRows": 1000,
+      "pageNo": 1,
+      "totalCount": 5
+    }
+  }
+}

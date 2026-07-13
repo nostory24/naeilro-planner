@@ -1,0 +1,71 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "trainno": "01672",
+            "traingradename": "무궁화호",
+            "depplacename": "동해",
+            "arrplacename": "제천",
+            "depplandtime": "20260707055500",
+            "arrplandtime": "20260707084600",
+            "adultcharge": "14800"
+          },
+          {
+            "trainno": "01642",
+            "traingradename": "ITX-마음",
+            "depplacename": "동해",
+            "arrplacename": "제천",
+            "depplandtime": "20260707074300",
+            "arrplandtime": "20260707102900",
+            "adultcharge": "14800"
+          },
+          {
+            "trainno": "01682",
+            "traingradename": "무궁화호",
+            "depplacename": "동해",
+            "arrplacename": "제천",
+            "depplandtime": "20260707093500",
+            "arrplandtime": "20260707123300",
+            "adultcharge": "14800"
+          },
+          {
+            "trainno": "01674",
+            "traingradename": "무궁화호",
+            "depplacename": "동해",
+            "arrplacename": "제천",
+            "depplandtime": "20260707134300",
+            "arrplandtime": "20260707163500",
+            "adultcharge": "14800"
+          },
+          {
+            "trainno": "01676",
+            "traingradename": "무궁화호",
+            "depplacename": "동해",
+            "arrplacename": "제천",
+            "depplandtime": "20260707150600",
+            "arrplandtime": "20260707180100",
+            "adultcharge": "14800"
+          },
+          {
+            "trainno": "01678",
+            "traingradename": "무궁화호",
+            "depplacename": "동해",
+            "arrplacename": "제천",
+            "depplandtime": "20260707181400",
+            "arrplandtime": "20260707210500",
+            "adultcharge": "14800"
+          }
+        ]
+      },
+      "numOfRows": 1000,
+      "pageNo": 1,
+      "totalCount": 6
+    }
+  }
+}

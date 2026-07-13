@@ -1,0 +1,197 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "trainno": "01652",
+            "traingradename": "무궁화호",
+            "depplacename": "제천",
+            "arrplacename": "청량리",
+            "depplandtime": "20260707052700",
+            "arrplandtime": "20260707072100",
+            "adultcharge": "15400"
+          },
+          {
+            "trainno": "01662",
+            "traingradename": "무궁화호",
+            "depplacename": "제천",
+            "arrplacename": "청량리",
+            "depplandtime": "20260707063300",
+            "arrplandtime": "20260707082700",
+            "adultcharge": "15400"
+          },
+          {
+            "trainno": "00702",
+            "traingradename": "KTX-이음",
+            "depplacename": "제천",
+            "arrplacename": "청량리",
+            "depplandtime": "20260707065100",
+            "arrplandtime": "20260707080800",
+            "adultcharge": "15400"
+          },
+          {
+            "trainno": "01612",
+            "traingradename": "ITX-마음",
+            "depplacename": "제천",
+            "arrplacename": "청량리",
+            "depplandtime": "20260707080700",
+            "arrplandtime": "20260707094700",
+            "adultcharge": "15400"
+          },
+          {
+            "trainno": "00704",
+            "traingradename": "KTX-이음",
+            "depplacename": "제천",
+            "arrplacename": "청량리",
+            "depplandtime": "20260707084300",
+            "arrplandtime": "20260707095700",
+            "adultcharge": "15400"
+          },
+          {
+            "trainno": "01672",
+            "traingradename": "무궁화호",
+            "depplacename": "제천",
+            "arrplacename": "청량리",
+            "depplandtime": "20260707084800",
+            "arrplandtime": "20260707103100",
+            "adultcharge": "12700"
+          },
+          {
+            "trainno": "01642",
+            "traingradename": "ITX-마음",
+            "depplacename": "제천",
+            "arrplacename": "청량리",
+            "depplandtime": "20260707103100",
+            "arrplandtime": "20260707114600",
+            "adultcharge": "12700"
+          },
+          {
+            "trainno": "00706",
+            "traingradename": "KTX-이음",
+            "depplacename": "제천",
+            "arrplacename": "청량리",
+            "depplandtime": "20260707104400",
+            "arrplandtime": "20260707115800",
+            "adultcharge": "15400"
+          },
+          {
+            "trainno": "01602",
+            "traingradename": "ITX-마음",
+            "depplacename": "제천",
+            "arrplacename": "청량리",
+            "depplandtime": "20260707111900",
+            "arrplandtime": "20260707125600",
+            "adultcharge": "15400"
+          },
+          {
+            "trainno": "00708",
+            "traingradename": "KTX-이음",
+            "depplacename": "제천",
+            "arrplacename": "청량리",
+            "depplandtime": "20260707125300",
+            "arrplandtime": "20260707141100",
+            "adultcharge": "15400"
+          },
+          {
+            "trainno": "00710",
+            "traingradename": "KTX-이음",
+            "depplacename": "제천",
+            "arrplacename": "청량리",
+            "depplandtime": "20260707145500",
+            "arrplandtime": "20260707160400",
+            "adultcharge": "15400"
+          },
+          {
+            "trainno": "01614",
+            "traingradename": "ITX-마음",
+            "depplacename": "제천",
+            "arrplacename": "청량리",
+            "depplandtime": "20260707153100",
+            "arrplandtime": "20260707170600",
+            "adultcharge": "15400"
+          },
+          {
+            "trainno": "00712",
+            "traingradename": "KTX-이음",
+            "depplacename": "제천",
+            "arrplacename": "청량리",
+            "depplandtime": "20260707160300",
+            "arrplandtime": "20260707171900",
+            "adultcharge": "15400"
+          },
+          {
+            "trainno": "01674",
+            "traingradename": "무궁화호",
+            "depplacename": "제천",
+            "arrplacename": "청량리",
+            "depplandtime": "20260707163700",
+            "arrplandtime": "20260707183500",
+            "adultcharge": "12700"
+          },
+          {
+            "trainno": "00714",
+            "traingradename": "KTX-이음",
+            "depplacename": "제천",
+            "arrplacename": "청량리",
+            "depplandtime": "20260707173100",
+            "arrplandtime": "20260707184900",
+            "adultcharge": "15400"
+          },
+          {
+            "trainno": "01676",
+            "traingradename": "무궁화호",
+            "depplacename": "제천",
+            "arrplacename": "청량리",
+            "depplandtime": "20260707180200",
+            "arrplandtime": "20260707195500",
+            "adultcharge": "12700"
+          },
+          {
+            "trainno": "00716",
+            "traingradename": "KTX-이음",
+            "depplacename": "제천",
+            "arrplacename": "청량리",
+            "depplandtime": "20260707185700",
+            "arrplandtime": "20260707201500",
+            "adultcharge": "15400"
+          },
+          {
+            "trainno": "01604",
+            "traingradename": "ITX-마음",
+            "depplacename": "제천",
+            "arrplacename": "청량리",
+            "depplandtime": "20260707192500",
+            "arrplandtime": "20260707205600",
+            "adultcharge": "15400"
+          },
+          {
+            "trainno": "01678",
+            "traingradename": "무궁화호",
+            "depplacename": "제천",
+            "arrplacename": "청량리",
+            "depplandtime": "20260707210700",
+            "arrplandtime": "20260707224000",
+            "adultcharge": "12700"
+          },
+          {
+            "trainno": "00718",
+            "traingradename": "KTX-이음",
+            "depplacename": "제천",
+            "arrplacename": "청량리",
+            "depplandtime": "20260707214900",
+            "arrplandtime": "20260707225800",
+            "adultcharge": "15400"
+          }
+        ]
+      },
+      "numOfRows": 1000,
+      "pageNo": 1,
+      "totalCount": 20
+    }
+  }
+}

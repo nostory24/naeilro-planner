@@ -1,0 +1,26 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "trainno": "02541",
+            "traingradename": "새마을호",
+            "depplacename": "제천",
+            "arrplacename": "아우라지",
+            "depplandtime": "20260707090200",
+            "arrplandtime": "20260707113300",
+            "adultcharge": "0"
+          }
+        ]
+      },
+      "numOfRows": 1000,
+      "pageNo": 1,
+      "totalCount": 1
+    }
+  }
+}

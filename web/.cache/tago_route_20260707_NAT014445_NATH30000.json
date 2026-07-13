@@ -1,0 +1,332 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "trainno": "00302",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "수서",
+            "depplandtime": "20260707050000",
+            "arrplandtime": "20260707073500",
+            "adultcharge": "52900"
+          },
+          {
+            "trainno": "00304",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "수서",
+            "depplandtime": "20260707053400",
+            "arrplandtime": "20260707080300",
+            "adultcharge": "52900"
+          },
+          {
+            "trainno": "00306",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "수서",
+            "depplandtime": "20260707055000",
+            "arrplandtime": "20260707084100",
+            "adultcharge": "52500"
+          },
+          {
+            "trainno": "00308",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "수서",
+            "depplandtime": "20260707065300",
+            "arrplandtime": "20260707092900",
+            "adultcharge": "52900"
+          },
+          {
+            "trainno": "00310",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "수서",
+            "depplandtime": "20260707071200",
+            "arrplandtime": "20260707100300",
+            "adultcharge": "52500"
+          },
+          {
+            "trainno": "00312",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "수서",
+            "depplandtime": "20260707073400",
+            "arrplandtime": "20260707101700",
+            "adultcharge": "52900"
+          },
+          {
+            "trainno": "00316",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "수서",
+            "depplandtime": "20260707082800",
+            "arrplandtime": "20260707105900",
+            "adultcharge": "52900"
+          },
+          {
+            "trainno": "00318",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "수서",
+            "depplandtime": "20260707085900",
+            "arrplandtime": "20260707112400",
+            "adultcharge": "52900"
+          },
+          {
+            "trainno": "00320",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "수서",
+            "depplandtime": "20260707091300",
+            "arrplandtime": "20260707114600",
+            "adultcharge": "52900"
+          },
+          {
+            "trainno": "00324",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "수서",
+            "depplandtime": "20260707101200",
+            "arrplandtime": "20260707124300",
+            "adultcharge": "52900"
+          },
+          {
+            "trainno": "00326",
+            "traingradename": "KTX",
+            "depplacename": "부산",
+            "arrplacename": "수서",
+            "depplandtime": "20260707103300",
+            "arrplandtime": "20260707130800",
+            "adultcharge": "52900"
+          },
+          {
+            "trainno": "00328",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "수서",
+            "depplandtime": "20260707104700",
+            "arrplandtime": "20260707132500",
+            "adultcharge": "52900"
+          },
+          {
+            "trainno": "00330",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "수서",
+            "depplandtime": "20260707121500",
+            "arrplandtime": "20260707145200",
+            "adultcharge": "52900"
+          },
+          {
+            "trainno": "00332",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "수서",
+            "depplandtime": "20260707124000",
+            "arrplandtime": "20260707151600",
+            "adultcharge": "52900"
+          },
+          {
+            "trainno": "00334",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "수서",
+            "depplandtime": "20260707125100",
+            "arrplandtime": "20260707152300",
+            "adultcharge": "52500"
+          },
+          {
+            "trainno": "00336",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "수서",
+            "depplandtime": "20260707133300",
+            "arrplandtime": "20260707160400",
+            "adultcharge": "52900"
+          },
+          {
+            "trainno": "00338",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "수서",
+            "depplandtime": "20260707134300",
+            "arrplandtime": "20260707160900",
+            "adultcharge": "52900"
+          },
+          {
+            "trainno": "00340",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "수서",
+            "depplandtime": "20260707140900",
+            "arrplandtime": "20260707164600",
+            "adultcharge": "52900"
+          },
+          {
+            "trainno": "00342",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "수서",
+            "depplandtime": "20260707142400",
+            "arrplandtime": "20260707170100",
+            "adultcharge": "52900"
+          },
+          {
+            "trainno": "00344",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "수서",
+            "depplandtime": "20260707144700",
+            "arrplandtime": "20260707171900",
+            "adultcharge": "52500"
+          },
+          {
+            "trainno": "00346",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "수서",
+            "depplandtime": "20260707152800",
+            "arrplandtime": "20260707175300",
+            "adultcharge": "52900"
+          },
+          {
+            "trainno": "00348",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "수서",
+            "depplandtime": "20260707153900",
+            "arrplandtime": "20260707181100",
+            "adultcharge": "52900"
+          },
+          {
+            "trainno": "00352",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "수서",
+            "depplandtime": "20260707155900",
+            "arrplandtime": "20260707184800",
+            "adultcharge": "52900"
+          },
+          {
+            "trainno": "00354",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "수서",
+            "depplandtime": "20260707164300",
+            "arrplandtime": "20260707192600",
+            "adultcharge": "52900"
+          },
+          {
+            "trainno": "00356",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "수서",
+            "depplandtime": "20260707172900",
+            "arrplandtime": "20260707195800",
+            "adultcharge": "52900"
+          },
+          {
+            "trainno": "00360",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "수서",
+            "depplandtime": "20260707181100",
+            "arrplandtime": "20260707204700",
+            "adultcharge": "52900"
+          },
+          {
+            "trainno": "00362",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "수서",
+            "depplandtime": "20260707185100",
+            "arrplandtime": "20260707212900",
+            "adultcharge": "52900"
+          },
+          {
+            "trainno": "00366",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "수서",
+            "depplandtime": "20260707200000",
+            "arrplandtime": "20260707222800",
+            "adultcharge": "52900"
+          },
+          {
+            "trainno": "00368",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "수서",
+            "depplandtime": "20260707201500",
+            "arrplandtime": "20260707224500",
+            "adultcharge": "52900"
+          },
+          {
+            "trainno": "00370",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "수서",
+            "depplandtime": "20260707203000",
+            "arrplandtime": "20260707231200",
+            "adultcharge": "52900"
+          },
+          {
+            "trainno": "00372",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "수서",
+            "depplandtime": "20260707204900",
+            "arrplandtime": "20260707232000",
+            "adultcharge": "52900"
+          },
+          {
+            "trainno": "00374",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "수서",
+            "depplandtime": "20260707211900",
+            "arrplandtime": "20260707233900",
+            "adultcharge": "52900"
+          },
+          {
+            "trainno": "00376",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "수서",
+            "depplandtime": "20260707214900",
+            "arrplandtime": "20260708002000",
+            "adultcharge": "52900"
+          },
+          {
+            "trainno": "00378",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "수서",
+            "depplandtime": "20260707222100",
+            "arrplandtime": "20260708010600",
+            "adultcharge": "52500"
+          },
+          {
+            "trainno": "00380",
+            "traingradename": "SRT",
+            "depplacename": "부산",
+            "arrplacename": "수서",
+            "depplandtime": "20260707230000",
+            "arrplandtime": "20260708011700",
+            "adultcharge": "52900"
+          }
+        ]
+      },
+      "numOfRows": 1000,
+      "pageNo": 1,
+      "totalCount": 35
+    }
+  }
+}

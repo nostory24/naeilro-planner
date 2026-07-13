@@ -1,0 +1,80 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "trainno": "04301",
+            "traingradename": "무궁화호",
+            "depplacename": "김천",
+            "arrplacename": "영주",
+            "depplandtime": "20260707063400",
+            "arrplandtime": "20260707110200",
+            "adultcharge": "19800"
+          },
+          {
+            "trainno": "01791",
+            "traingradename": "무궁화호",
+            "depplacename": "김천",
+            "arrplacename": "영주",
+            "depplandtime": "20260707091400",
+            "arrplandtime": "20260707113100",
+            "adultcharge": "0"
+          },
+          {
+            "trainno": "01793",
+            "traingradename": "무궁화호",
+            "depplacename": "김천",
+            "arrplacename": "영주",
+            "depplandtime": "20260707115100",
+            "arrplandtime": "20260707140500",
+            "adultcharge": "0"
+          },
+          {
+            "trainno": "01795",
+            "traingradename": "무궁화호",
+            "depplacename": "김천",
+            "arrplacename": "영주",
+            "depplandtime": "20260707145800",
+            "arrplandtime": "20260707171300",
+            "adultcharge": "0"
+          },
+          {
+            "trainno": "01797",
+            "traingradename": "무궁화호",
+            "depplacename": "김천",
+            "arrplacename": "영주",
+            "depplandtime": "20260707185400",
+            "arrplandtime": "20260707210700",
+            "adultcharge": "0"
+          },
+          {
+            "trainno": "04303",
+            "traingradename": "무궁화호",
+            "depplacename": "김천",
+            "arrplacename": "영주",
+            "depplandtime": "20260707185900",
+            "arrplandtime": "20260707231100",
+            "adultcharge": "19800"
+          },
+          {
+            "trainno": "01799",
+            "traingradename": "무궁화호",
+            "depplacename": "김천",
+            "arrplacename": "영주",
+            "depplandtime": "20260707202300",
+            "arrplandtime": "20260707223600",
+            "adultcharge": "0"
+          }
+        ]
+      },
+      "numOfRows": 1000,
+      "pageNo": 1,
+      "totalCount": 7
+    }
+  }
+}

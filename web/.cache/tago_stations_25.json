@@ -1,0 +1,33 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "nodeid": "NAT011524",
+            "nodename": "신탄진"
+          },
+          {
+            "nodeid": "NAT011668",
+            "nodename": "대전"
+          },
+          {
+            "nodeid": "NAT030057",
+            "nodename": "서대전"
+          },
+          {
+            "nodeid": "NAT030173",
+            "nodename": "흑석리"
+          }
+        ]
+      },
+      "numOfRows": 1000,
+      "pageNo": 1,
+      "totalCount": 4
+    }
+  }
+}

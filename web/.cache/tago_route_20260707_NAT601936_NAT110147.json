@@ -1,0 +1,26 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "trainno": "00826",
+            "traingradename": "KTX-이음",
+            "depplacename": "강릉",
+            "arrplacename": "행신",
+            "depplandtime": "20260707213300",
+            "arrplandtime": "20260707234800",
+            "adultcharge": "29200"
+          }
+        ]
+      },
+      "numOfRows": 1000,
+      "pageNo": 1,
+      "totalCount": 1
+    }
+  }
+}

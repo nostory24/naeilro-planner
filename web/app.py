@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent
 DB_PATH = ROOT / "output" / "reachable.db"
 STATIC = ROOT / "static"
 
-app = FastAPI(title="내일로 역 탐색기", version="5.0.0")
+app = FastAPI(title="내일로 역 탐색기", version="7.0.0")
 app.mount("/static", StaticFiles(directory=STATIC), name="static")
 
 
@@ -81,7 +81,10 @@ def search(
                 transfer_count,
                 ride_count,
                 path,
-                legs
+                legs,
+                used_train_types,
+                uses_ktx,
+                has_unknown_train_type
             FROM reachable_routes
             WHERE from_station = ?
               AND duration_minutes <= ?
