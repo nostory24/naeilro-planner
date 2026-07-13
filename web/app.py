@@ -12,25 +12,22 @@ from fastapi.staticfiles import StaticFiles
 
 ROOT = Path(__file__).resolve().parent
 DB_PATH = ROOT / "output" / "reachable.db"
-STATIC = ROOT / "static"
+STATIC_DIR = ROOT / "static"
 
-app = FastAPI(title="내일로 역 탐색기", version="7.4.0")
-app.mount("/static", StaticFiles(directory=STATIC), name="static")
+app = FastAPI(title="내일로 역 탐색기", version="8.0.0")
+app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
-_STATION_CACHE: list[str] | None = None
+_station_cache: list[str] | None = None
 
 
-def db() -> sqlite3.Connection:
+def open_db() -> sqlite3.Connection:
     if not DB_PATH.exists():
         raise FileNotFoundError("web/output/reachable.db 파일이 없습니다.")
 
-    # Render에서는 배포된 DB를 읽기 전용으로 사용합니다.
-    # immutable=1은 불필요한 파일 잠금과 WAL 확인을 피해서 조회 지연을 줄입니다.
     uri = f"file:{DB_PATH.as_posix()}?mode=ro&immutable=1"
     conn = sqlite3.connect(uri, uri=True, timeout=3)
     conn.row_factory = sqlite3.Row
     conn.execute("PRAGMA query_only=ON")
-    conn.execute("PRAGMA busy_timeout=3000")
     return conn
 
 
@@ -56,14 +53,18 @@ def normalize_train_category(train_type: str) -> str:
     return train_type.strip()
 
 
-def load_dynamic_graph(conn: sqlite3.Connection, excluded_categories: set[str]):
+def load_graph(
+    conn: sqlite3.Connection,
+    excluded_categories: set[str],
+) -> tuple[dict[str, str], dict[str, list[dict[str, Any]]]]:
     names = {
-        station_id: station_name
-        for station_id, station_name in conn.execute(
+        row["station_id"]: row["station_name"]
+        for row in conn.execute(
             "SELECT station_id, station_name FROM stations"
-        )
+        ).fetchall()
     }
-    edges: dict[str, list[dict[str, Any]]] = defaultdict(list)
+
+    graph: dict[str, list[dict[str, Any]]] = defaultdict(list)
 
     rows = conn.execute("""
         SELECT
@@ -81,57 +82,66 @@ def load_dynamic_graph(conn: sqlite3.Connection, excluded_categories: set[str]):
         if category in excluded_categories:
             continue
 
-        edges[row["from_station_id"]].append({
+        graph[row["from_station_id"]].append({
             "to": row["to_station_id"],
             "minutes": int(row["min_duration_minutes"]),
             "train_no": row["best_train_no"] or "",
             "train_type": row["best_train_type"] or "UNKNOWN",
-            "train_category": category,
             "line_name": row["best_line_name"] or "",
         })
 
-    return names, edges
+    return names, graph
 
 
-def dijkstra(source: str, edges, transfer_wait: int):
+def dijkstra(
+    source: str,
+    graph: dict[str, list[dict[str, Any]]],
+    transfer_wait: int,
+):
     distance = {source: 0}
-    hops = {source: 0}
-    previous = {}
+    ride_count = {source: 0}
+    previous: dict[str, tuple[str, dict[str, Any], int]] = {}
     queue = [(0, 0, source)]
 
     while queue:
-        cost, hop_count, node = heapq.heappop(queue)
-        if cost != distance.get(node):
+        current_cost, current_rides, node = heapq.heappop(queue)
+
+        if current_cost != distance.get(node):
             continue
 
-        for edge in edges.get(node, []):
-            nxt = edge["to"]
-            waiting = 0 if hop_count == 0 else transfer_wait
-            new_cost = cost + waiting + edge["minutes"]
-            new_hops = hop_count + 1
+        for edge in graph.get(node, []):
+            target = edge["to"]
+            waiting = 0 if current_rides == 0 else transfer_wait
+            next_cost = current_cost + waiting + edge["minutes"]
+            next_rides = current_rides + 1
 
-            old_cost = distance.get(nxt, 10**12)
-            old_hops = hops.get(nxt, 10**9)
+            old_cost = distance.get(target, 10**12)
+            old_rides = ride_count.get(target, 10**9)
 
-            if new_cost < old_cost or (
-                new_cost == old_cost and new_hops < old_hops
+            if next_cost < old_cost or (
+                next_cost == old_cost and next_rides < old_rides
             ):
-                distance[nxt] = new_cost
-                hops[nxt] = new_hops
-                previous[nxt] = (node, edge, waiting)
-                heapq.heappush(queue, (new_cost, new_hops, nxt))
+                distance[target] = next_cost
+                ride_count[target] = next_rides
+                previous[target] = (node, edge, waiting)
+                heapq.heappush(queue, (next_cost, next_rides, target))
 
-    return distance, hops, previous
+    return distance, ride_count, previous
 
 
-def reconstruct(source: str, target: str, previous, names: dict[str, str]):
-    nodes = []
-    legs = []
+def reconstruct_route(
+    source: str,
+    target: str,
+    previous: dict[str, tuple[str, dict[str, Any], int]],
+    names: dict[str, str],
+):
+    nodes: list[str] = []
+    legs: list[tuple[str, str, dict[str, Any], int]] = []
     current = target
 
     while current != source:
         if current not in previous:
-            return "", "", [], False
+            return "", "", []
 
         before, edge, waiting = previous[current]
         nodes.append(current)
@@ -142,48 +152,46 @@ def reconstruct(source: str, target: str, previous, names: dict[str, str]):
     nodes.reverse()
     legs.reverse()
 
-    path = " -> ".join(names.get(node, node) for node in nodes)
-    leg_texts = []
-    used_types = []
-    has_unknown = False
+    path = " → ".join(names.get(node, node) for node in nodes)
+    leg_texts: list[str] = []
+    train_types: list[str] = []
 
     for before, current, edge, waiting in legs:
-        train_type = edge.get("train_type") or "UNKNOWN"
-        category = edge.get("train_category") or normalize_train_category(train_type)
+        train_type = edge["train_type"] or "UNKNOWN"
+        if train_type not in train_types:
+            train_types.append(train_type)
 
-        if category == "미확인":
-            has_unknown = True
-        if train_type not in used_types:
-            used_types.append(train_type)
-
-        text = (
-            f'{names.get(before, before)}→{names.get(current, current)}'
+        leg_text = (
+            f'{names.get(before, before)}→{names.get(current, current)} '
             f'({edge["minutes"]}분, {train_type}, '
             f'열차번호 {edge["train_no"]}, {edge["line_name"]})'
         )
         if waiting:
-            text = f"환승대기{waiting}분 + " + text
-        leg_texts.append(text)
+            leg_text = f"환승대기 {waiting}분 + " + leg_text
+        leg_texts.append(leg_text)
 
-    return path, " | ".join(leg_texts), used_types, has_unknown
+    return path, " | ".join(leg_texts), train_types
 
 
 @app.get("/")
 def index():
-    return FileResponse(STATIC / "index.html")
+    return FileResponse(STATIC_DIR / "index.html")
 
 
 @app.get("/manifest.webmanifest")
 def manifest():
     return FileResponse(
-        STATIC / "manifest.webmanifest",
+        STATIC_DIR / "manifest.webmanifest",
         media_type="application/manifest+json",
     )
 
 
 @app.get("/sw.js")
-def sw():
-    return FileResponse(STATIC / "sw.js", media_type="application/javascript")
+def service_worker():
+    return FileResponse(
+        STATIC_DIR / "sw.js",
+        media_type="application/javascript",
+    )
 
 
 @app.get("/api/health")
@@ -198,11 +206,11 @@ def health():
 @app.get("/api/db-check")
 def db_check():
     try:
-        conn = db()
+        conn = open_db()
         station_count = conn.execute(
             "SELECT COUNT(*) FROM stations"
         ).fetchone()[0]
-        direct_count = conn.execute(
+        direct_route_count = conn.execute(
             "SELECT COUNT(*) FROM direct_routes"
         ).fetchone()[0]
         conn.close()
@@ -210,7 +218,7 @@ def db_check():
         return {
             "ok": True,
             "station_count": station_count,
-            "direct_route_count": direct_count,
+            "direct_route_count": direct_route_count,
         }
     except Exception as exc:
         return JSONResponse(
@@ -221,39 +229,30 @@ def db_check():
 
 @app.get("/api/stations")
 def stations():
-    global _STATION_CACHE
+    global _station_cache
 
     try:
-        if _STATION_CACHE is not None:
-            return {
-                "stations": _STATION_CACHE,
-                "count": len(_STATION_CACHE),
-                "cached": True,
-            }
+        if _station_cache is None:
+            conn = open_db()
+            rows = conn.execute("""
+                SELECT station_name
+                FROM stations
+                WHERE station_name IS NOT NULL
+                  AND TRIM(station_name) <> ''
+                ORDER BY station_name
+            """).fetchall()
+            conn.close()
 
-        conn = db()
-        rows = conn.execute("""
-            SELECT station_name
-            FROM stations
-            WHERE station_name IS NOT NULL
-              AND TRIM(station_name) <> ''
-            ORDER BY station_name
-        """).fetchall()
-        conn.close()
-
-        # 혹시 동일 역명이 여러 역코드로 들어 있어도 한 번만 반환
-        _STATION_CACHE = sorted({
-            str(row["station_name"]).strip()
-            for row in rows
-            if str(row["station_name"]).strip()
-        })
+            _station_cache = sorted({
+                str(row["station_name"]).strip()
+                for row in rows
+                if str(row["station_name"]).strip()
+            })
 
         return {
-            "stations": _STATION_CACHE,
-            "count": len(_STATION_CACHE),
-            "cached": False,
+            "stations": _station_cache,
+            "count": len(_station_cache),
         }
-
     except Exception as exc:
         return JSONResponse(
             status_code=500,
@@ -265,7 +264,7 @@ def stations():
 def search(
     from_station: str = Query(...),
     minutes: int = Query(180, ge=1, le=3000),
-    max_transfer: int = Query(5, ge=0, le=20),
+    max_transfer: int = Query(2, ge=0, le=20),
     excluded_train_types: str = Query(""),
     transfer_wait: int = Query(15, ge=0, le=180),
     limit: int = Query(1000, ge=1, le=5000),
@@ -277,7 +276,8 @@ def search(
             if value.strip()
         }
 
-        conn = db()
+        conn = open_db()
+
         source_row = conn.execute(
             "SELECT station_id FROM stations WHERE station_name = ? LIMIT 1",
             (from_station,),
@@ -291,23 +291,28 @@ def search(
             )
 
         source_id = source_row["station_id"]
-        names, edges = load_dynamic_graph(conn, excluded_categories)
+        names, graph = load_graph(conn, excluded_categories)
         conn.close()
 
-        distance, hops, previous = dijkstra(source_id, edges, transfer_wait)
+        distance, rides, previous = dijkstra(
+            source_id,
+            graph,
+            transfer_wait,
+        )
 
-        results = []
+        results: list[dict[str, Any]] = []
+
         for target_id, duration in distance.items():
             if target_id == source_id:
                 continue
 
-            ride_count = hops.get(target_id, 0)
+            ride_count = rides.get(target_id, 0)
             transfer_count = max(0, ride_count - 1)
 
             if duration > minutes or transfer_count > max_transfer:
                 continue
 
-            path, legs, used_types, has_unknown = reconstruct(
+            path, legs, train_types = reconstruct_route(
                 source_id,
                 target_id,
                 previous,
@@ -321,18 +326,17 @@ def search(
                 "ride_count": ride_count,
                 "path": path,
                 "legs": legs,
-                "used_train_types": ",".join(used_types),
-                "uses_ktx": int(any("KTX" in value.upper() for value in used_types)),
-                "has_unknown_train_type": int(has_unknown),
+                "used_train_types": ",".join(train_types),
             })
 
         results.sort(
-            key=lambda row: (
-                row["duration_minutes"],
-                row["transfer_count"],
-                row["to_station"],
+            key=lambda item: (
+                item["duration_minutes"],
+                item["transfer_count"],
+                item["to_station"],
             )
         )
+
         results = results[:limit]
 
         return {
@@ -345,4 +349,7 @@ def search(
         }
 
     except Exception as exc:
-        return JSONResponse(status_code=500, content={"error": str(exc)})
+        return JSONResponse(
+            status_code=500,
+            content={"error": str(exc)},
+        )
